@@ -1,43 +1,43 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cartopy.io.shapereader &mdash; cartopy 0.12.0rc1 documentation</title>
+    <title>cartopy.io.shapereader &#8212; cartopy 0.15.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '0.12.0rc1',
+        VERSION:     '0.15.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
     <link rel="copyright" title="Copyright" href="../../../copyright.html" />
-    <link rel="top" title="cartopy 0.12.0rc1 documentation" href="../../../index.html" />
-    <link rel="up" title="cartopy.io" href="../io.html" />
  
 
      <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
      <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
 
      <link rel="stylesheet" href="../../../_static/layout.css" type="text/css" />
-     <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
-     <script type="text/javascript" src="http://scitools.org.uk/cartopy/docs/latest/_static/version_switch.js"></script>
 
   </head>
   <body>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -47,32 +47,29 @@
           <a href="../../../cartopy_outline.html" title="Module outline"
              accesskey="O">outline</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
-        <li><a href="../../../gallery.html">gallery</a>|&nbsp;</li>
-        
+        <li><a href="../../../gallery/index.html.html">gallery</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Module code</a> &raquo;</li>
-          <li><a href="../io.html" accesskey="U">cartopy.io</a> &raquo;</li> 
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../io.html" accesskey="U">cartopy.io</a> &#187;</li> 
       </ul>
     </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <a href="../../../index.html">
-<img src="../../../_static/cartopy.png" 
+<img src="../../../_static/cartopy.png"
 border="0" alt="Cartopy" style="margin-left: -60px;"/>
 </a>
 
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -84,25 +81,25 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <h1>Source code for cartopy.io.shapereader</h1><div class="highlight"><pre>
-<span class="c"># (C) British Crown Copyright 2011 - 2014, Met Office</span>
-<span class="c">#</span>
-<span class="c"># This file is part of cartopy.</span>
-<span class="c">#</span>
-<span class="c"># cartopy is free software: you can redistribute it and/or modify it under</span>
-<span class="c"># the terms of the GNU Lesser General Public License as published by the</span>
-<span class="c"># Free Software Foundation, either version 3 of the License, or</span>
-<span class="c"># (at your option) any later version.</span>
-<span class="c">#</span>
-<span class="c"># cartopy is distributed in the hope that it will be useful,</span>
-<span class="c"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<span class="c"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<span class="c"># GNU Lesser General Public License for more details.</span>
-<span class="c">#</span>
-<span class="c"># You should have received a copy of the GNU Lesser General Public License</span>
-<span class="c"># along with cartopy.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span></span><span class="c1"># (C) British Crown Copyright 2011 - 2016, Met Office</span>
+<span class="c1">#</span>
+<span class="c1"># This file is part of cartopy.</span>
+<span class="c1">#</span>
+<span class="c1"># cartopy is free software: you can redistribute it and/or modify it under</span>
+<span class="c1"># the terms of the GNU Lesser General Public License as published by the</span>
+<span class="c1"># Free Software Foundation, either version 3 of the License, or</span>
+<span class="c1"># (at your option) any later version.</span>
+<span class="c1">#</span>
+<span class="c1"># cartopy is distributed in the hope that it will be useful,</span>
+<span class="c1"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c1"># GNU Lesser General Public License for more details.</span>
+<span class="c1">#</span>
+<span class="c1"># You should have received a copy of the GNU Lesser General Public License</span>
+<span class="c1"># along with cartopy.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</span>
 
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -131,56 +128,56 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
-<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">MultiLineString</span><span class="p">,</span> <span class="n">MultiPolygon</span><span class="p">,</span> <span class="n">Point</span><span class="p">,</span> <span class="n">Polygon</span>
+<span class="kn">import</span> <span class="nn">shapely.geometry</span> <span class="k">as</span> <span class="nn">sgeom</span>
 <span class="kn">import</span> <span class="nn">shapefile</span>
 <span class="kn">import</span> <span class="nn">six</span>
 
-<span class="kn">from</span> <span class="nn">cartopy.io</span> <span class="kn">import</span> <span class="n">Downloader</span>
-<span class="kn">from</span> <span class="nn">cartopy</span> <span class="kn">import</span> <span class="n">config</span>
+<span class="kn">from</span> <span class="nn">cartopy.io</span> <span class="k">import</span> <span class="n">Downloader</span>
+<span class="kn">from</span> <span class="nn">cartopy</span> <span class="k">import</span> <span class="n">config</span>
 
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Reader&#39;</span><span class="p">,</span> <span class="s">&#39;Record&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Reader&#39;</span><span class="p">,</span> <span class="s1">&#39;Record&#39;</span><span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">_create_point</span><span class="p">(</span><span class="n">shape</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">sgeom</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 
 <span class="k">def</span> <span class="nf">_create_polyline</span><span class="p">(</span><span class="n">shape</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">shape</span><span class="o">.</span><span class="n">points</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">MultiLineString</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">sgeom</span><span class="o">.</span><span class="n">MultiLineString</span><span class="p">()</span>
 
-    <span class="n">parts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">parts</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span>
-    <span class="n">bounds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">parts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">parts</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span>
+    <span class="n">bounds</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">parts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">shape</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)]</span> <span class="k">for</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="ow">in</span> <span class="n">bounds</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">MultiLineString</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sgeom</span><span class="o">.</span><span class="n">MultiLineString</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_create_polygon</span><span class="p">(</span><span class="n">shape</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">shape</span><span class="o">.</span><span class="n">points</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">MultiPolygon</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">sgeom</span><span class="o">.</span><span class="n">MultiPolygon</span><span class="p">()</span>
 
-    <span class="c"># Partition the shapefile rings into outer rings/polygons (clockwise) and</span>
-    <span class="c"># inner rings/holes (anti-clockwise).</span>
-    <span class="n">parts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">parts</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span>
-    <span class="n">bounds</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">parts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
+    <span class="c1"># Partition the shapefile rings into outer rings/polygons (clockwise) and</span>
+    <span class="c1"># inner rings/holes (anti-clockwise).</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">parts</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span>
+    <span class="n">bounds</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">parts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
     <span class="n">outer_polygons_and_holes</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">inner_polygons</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="ow">in</span> <span class="n">bounds</span><span class="p">:</span>
-        <span class="n">polygon</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)])</span>
+        <span class="n">polygon</span> <span class="o">=</span> <span class="n">sgeom</span><span class="o">.</span><span class="n">Polygon</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)])</span>
         <span class="k">if</span> <span class="n">polygon</span><span class="o">.</span><span class="n">exterior</span><span class="o">.</span><span class="n">is_ccw</span><span class="p">:</span>
             <span class="n">inner_polygons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">polygon</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">outer_polygons_and_holes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">polygon</span><span class="p">,</span> <span class="p">[]))</span>
 
-    <span class="c"># Find the appropriate outer ring for each inner ring.</span>
-    <span class="c"># aka. Group the holes with their containing polygons.</span>
+    <span class="c1"># Find the appropriate outer ring for each inner ring.</span>
+    <span class="c1"># aka. Group the holes with their containing polygons.</span>
     <span class="k">for</span> <span class="n">inner_polygon</span> <span class="ow">in</span> <span class="n">inner_polygons</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">outer_polygon</span><span class="p">,</span> <span class="n">holes</span> <span class="ow">in</span> <span class="n">outer_polygons_and_holes</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">outer_polygon</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">inner_polygon</span><span class="p">):</span>
@@ -189,17 +186,17 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
     <span class="n">polygon_defns</span> <span class="o">=</span> <span class="p">[(</span><span class="n">outer_polygon</span><span class="o">.</span><span class="n">exterior</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">holes</span><span class="p">)</span>
                      <span class="k">for</span> <span class="n">outer_polygon</span><span class="p">,</span> <span class="n">holes</span> <span class="ow">in</span> <span class="n">outer_polygons_and_holes</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">MultiPolygon</span><span class="p">(</span><span class="n">polygon_defns</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sgeom</span><span class="o">.</span><span class="n">MultiPolygon</span><span class="p">(</span><span class="n">polygon_defns</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_make_geometry</span><span class="p">(</span><span class="n">geometry_factory</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
-    <span class="n">geometry</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="n">shape</span><span class="o">.</span><span class="n">shapeType</span> <span class="o">!=</span> <span class="n">shapefile</span><span class="o">.</span><span class="n">NULL</span><span class="p">:</span>
         <span class="n">geometry</span> <span class="o">=</span> <span class="n">geometry_factory</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">geometry</span>
 
 
-<span class="c"># The mapping from shapefile shapeType values to geometry creation functions.</span>
+<span class="c1"># The mapping from shapefile shapeType values to geometry creation functions.</span>
 <span class="n">GEOMETRY_FACTORIES</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">shapefile</span><span class="o">.</span><span class="n">POINT</span><span class="p">:</span> <span class="n">_create_point</span><span class="p">,</span>
     <span class="n">shapefile</span><span class="o">.</span><span class="n">POLYLINE</span><span class="p">:</span> <span class="n">_create_polyline</span><span class="p">,</span>
@@ -217,13 +214,13 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="o">=</span> <span class="n">shape</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_geometry_factory</span> <span class="o">=</span> <span class="n">geometry_factory</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="c"># if the record defines a bbox, then use that for the shape&#39;s bounds,</span>
-        <span class="c"># rather than using the full geometry in the bounds property</span>
-        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="s">&#39;bbox&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># if the record defines a bbox, then use that for the shape&#39;s bounds,</span>
+        <span class="c1"># rather than using the full geometry in the bounds property</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="s1">&#39;bbox&#39;</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">shape</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="sd">&quot;&quot;&quot;The cached geometry instance for this Record.&quot;&quot;&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">attributes</span> <span class="o">=</span> <span class="n">attributes</span>
@@ -232,24 +229,24 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <span class="bp">self</span><span class="o">.</span><span class="n">_fields</span> <span class="o">=</span> <span class="n">fields</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;&lt;Record: </span><span class="si">%r</span><span class="s">, </span><span class="si">%r</span><span class="s">, &lt;fields&gt;&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">attributes</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;Record: </span><span class="si">%r</span><span class="s1">, </span><span class="si">%r</span><span class="s1">, &lt;fields&gt;&gt;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">attributes</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">&#39;Record(</span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s">, &lt;fields&gt;)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">attributes</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;Record(</span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">, &lt;fields&gt;)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">attributes</span><span class="p">)</span>
 
     <span class="nd">@property</span>
-<div class="viewcode-block" id="Record.bounds"><a class="viewcode-back" href="../../../tutorials/using_the_shapereader.html#cartopy.io.shapereader.Record.bounds">[docs]</a>    <span class="k">def</span> <span class="nf">bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The bounds of this Record&#39;s</span>
 <span class="sd">        :meth:`~Record.geometry`.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">bounds</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span>
-</div>
+
     <span class="nd">@property</span>
-<div class="viewcode-block" id="Record.geometry"><a class="viewcode-back" href="../../../tutorials/using_the_shapereader.html#cartopy.io.shapereader.Record.geometry">[docs]</a>    <span class="k">def</span> <span class="nf">geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A shapely.geometry instance for this Record.</span>
 
@@ -257,12 +254,12 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">        shapefile.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span> <span class="ow">is</span> <span class="bp">False</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span> <span class="o">=</span> <span class="n">_make_geometry</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_geometry_factory</span><span class="p">,</span>
                                             <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry</span></div>
 
-</div></div>
+
 <div class="viewcode-block" id="Reader"><a class="viewcode-back" href="../../../tutorials/using_the_shapereader.html#cartopy.io.shapereader.Reader">[docs]</a><span class="k">class</span> <span class="nc">Reader</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Provides an interface for accessing the contents of a shapefile.</span>
@@ -272,17 +269,17 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-        <span class="c"># Validate the filename/shapefile</span>
+        <span class="c1"># Validate the filename/shapefile</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">reader</span> <span class="o">=</span> <span class="n">shapefile</span><span class="o">.</span><span class="n">Reader</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">reader</span><span class="o">.</span><span class="n">shp</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">reader</span><span class="o">.</span><span class="n">shx</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">reader</span><span class="o">.</span><span class="n">dbf</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Incomplete shapefile definition &quot;</span>
-                             <span class="s">&quot;in &#39;</span><span class="si">%s</span><span class="s">&#39;.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">reader</span><span class="o">.</span><span class="n">shp</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">reader</span><span class="o">.</span><span class="n">shx</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">reader</span><span class="o">.</span><span class="n">dbf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Incomplete shapefile definition &quot;</span>
+                             <span class="s2">&quot;in &#39;</span><span class="si">%s</span><span class="s2">&#39;.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
 
-        <span class="c"># Figure out how to make appropriate shapely geometry instances</span>
+        <span class="c1"># Figure out how to make appropriate shapely geometry instances</span>
         <span class="n">shapeType</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">shapeType</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_geometry_factory</span> <span class="o">=</span> <span class="n">GEOMETRY_FACTORIES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">shapeType</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry_factory</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&#39;Unsupported shape type: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">shapeType</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry_factory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Unsupported shape type: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">shapeType</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">fields</span>
 
@@ -304,25 +301,25 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <span class="n">geometry_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry_factory</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">numRecords</span><span class="p">):</span>
             <span class="n">shape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-            <span class="k">yield</span> <span class="n">_make_geometry</span><span class="p">(</span><span class="n">geometry_factory</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span>
-</div>
+            <span class="k">yield</span> <span class="n">_make_geometry</span><span class="p">(</span><span class="n">geometry_factory</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span></div>
+
 <div class="viewcode-block" id="Reader.records"><a class="viewcode-back" href="../../../tutorials/using_the_shapereader.html#cartopy.io.shapereader.Reader.records">[docs]</a>    <span class="k">def</span> <span class="nf">records</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns an iterator of :class:`~Record` instances.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">geometry_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_geometry_factory</span>
-        <span class="c"># Ignore the &quot;DeletionFlag&quot; field which always comes first</span>
+        <span class="c1"># Ignore the &quot;DeletionFlag&quot; field which always comes first</span>
         <span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
         <span class="n">field_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">numRecords</span><span class="p">):</span>
             <span class="n">shape_record</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">shapeRecord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
             <span class="n">attributes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">field_names</span><span class="p">,</span> <span class="n">shape_record</span><span class="o">.</span><span class="n">record</span><span class="p">))</span>
             <span class="k">yield</span> <span class="n">Record</span><span class="p">(</span><span class="n">shape_record</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">geometry_factory</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span>
-                         <span class="n">fields</span><span class="p">)</span>
+                         <span class="n">fields</span><span class="p">)</span></div></div>
 
-</div></div>
-<div class="viewcode-block" id="natural_earth"><a class="viewcode-back" href="../../../tutorials/using_the_shapereader.html#cartopy.io.shapereader.natural_earth">[docs]</a><span class="k">def</span> <span class="nf">natural_earth</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s">&#39;110m&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s">&#39;physical&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;coastline&#39;</span><span class="p">):</span>
+
+<div class="viewcode-block" id="natural_earth"><a class="viewcode-back" href="../../../tutorials/using_the_shapereader.html#cartopy.io.shapereader.natural_earth">[docs]</a><span class="k">def</span> <span class="nf">natural_earth</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;110m&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s1">&#39;physical&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;coastline&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the path to the requested natural earth shapefile,</span>
 <span class="sd">    downloading and unziping if necessary.</span>
@@ -343,16 +340,16 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">        appropriate names.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c"># get hold of the Downloader (typically a NEShpDownloader instance)</span>
-    <span class="c"># which we can then simply call its path method to get the appropriate</span>
-    <span class="c"># shapefile (it will download if necessary)</span>
-    <span class="n">ne_downloader</span> <span class="o">=</span> <span class="n">Downloader</span><span class="o">.</span><span class="n">from_config</span><span class="p">((</span><span class="s">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s">&#39;natural_earth&#39;</span><span class="p">,</span>
+    <span class="c1"># get hold of the Downloader (typically a NEShpDownloader instance)</span>
+    <span class="c1"># which we can then simply call its path method to get the appropriate</span>
+    <span class="c1"># shapefile (it will download if necessary)</span>
+    <span class="n">ne_downloader</span> <span class="o">=</span> <span class="n">Downloader</span><span class="o">.</span><span class="n">from_config</span><span class="p">((</span><span class="s1">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s1">&#39;natural_earth&#39;</span><span class="p">,</span>
                                             <span class="n">resolution</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
-    <span class="n">format_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;config&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">,</span> <span class="s">&#39;category&#39;</span><span class="p">:</span> <span class="n">category</span><span class="p">,</span>
-                   <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s">&#39;resolution&#39;</span><span class="p">:</span> <span class="n">resolution</span><span class="p">}</span>
-    <span class="k">return</span> <span class="n">ne_downloader</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">format_dict</span><span class="p">)</span>
+    <span class="n">format_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;config&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="n">category</span><span class="p">,</span>
+                   <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;resolution&#39;</span><span class="p">:</span> <span class="n">resolution</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">ne_downloader</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">format_dict</span><span class="p">)</span></div>
 
-</div>
+
 <span class="k">class</span> <span class="nc">NEShpDownloader</span><span class="p">(</span><span class="n">Downloader</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Specialises :class:`cartopy.io.Downloader` to download the zipped</span>
@@ -363,21 +360,21 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">    are typically ``category``, ``resolution`` and ``name``.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">FORMAT_KEYS</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;config&#39;</span><span class="p">,</span> <span class="s">&#39;resolution&#39;</span><span class="p">,</span> <span class="s">&#39;category&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">)</span>
+    <span class="n">FORMAT_KEYS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;resolution&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span>
 
-    <span class="c"># Define the NaturalEarth URL template. The natural earth website</span>
-    <span class="c"># returns a 302 status if accessing directly, so we use the naciscdn</span>
-    <span class="c"># URL directly.</span>
-    <span class="n">_NE_URL_TEMPLATE</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;http://naciscdn.org/naturalearth/{resolution}&#39;</span>
-                        <span class="s">&#39;/{category}/ne_{resolution}_{name}.zip&#39;</span><span class="p">)</span>
+    <span class="c1"># Define the NaturalEarth URL template. The natural earth website</span>
+    <span class="c1"># returns a 302 status if accessing directly, so we use the naciscdn</span>
+    <span class="c1"># URL directly.</span>
+    <span class="n">_NE_URL_TEMPLATE</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;http://naciscdn.org/naturalearth/</span><span class="si">{resolution}</span><span class="s1">&#39;</span>
+                        <span class="s1">&#39;/</span><span class="si">{category}</span><span class="s1">/ne_</span><span class="si">{resolution}</span><span class="s1">_</span><span class="si">{name}</span><span class="s1">.zip&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">url_template</span><span class="o">=</span><span class="n">_NE_URL_TEMPLATE</span><span class="p">,</span>
-                 <span class="n">target_path_template</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                 <span class="n">pre_downloaded_path_template</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+                 <span class="n">target_path_template</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">pre_downloaded_path_template</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
                  <span class="p">):</span>
-        <span class="c"># adds some NE defaults to the __init__ of a Downloader</span>
-        <span class="n">Downloader</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url_template</span><span class="p">,</span>
+        <span class="c1"># adds some NE defaults to the __init__ of a Downloader</span>
+        <span class="n">Downloader</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url_template</span><span class="p">,</span>
                             <span class="n">target_path_template</span><span class="p">,</span>
                             <span class="n">pre_downloaded_path_template</span><span class="p">)</span>
 
@@ -387,9 +384,9 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">        natural earth zip file.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;.shp&#39;</span><span class="p">,</span> <span class="s">&#39;.dbf&#39;</span><span class="p">,</span> <span class="s">&#39;.shx&#39;</span><span class="p">]:</span>
-            <span class="k">yield</span> <span class="p">(</span><span class="s">&#39;ne_{resolution}_{name}&#39;</span>
-                   <span class="s">&#39;{extension}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extension</span><span class="o">=</span><span class="n">ext</span><span class="p">,</span> <span class="o">**</span><span class="n">format_dict</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.shp&#39;</span><span class="p">,</span> <span class="s1">&#39;.dbf&#39;</span><span class="p">,</span> <span class="s1">&#39;.shx&#39;</span><span class="p">]:</span>
+            <span class="k">yield</span> <span class="p">(</span><span class="s1">&#39;ne_</span><span class="si">{resolution}</span><span class="s1">_</span><span class="si">{name}</span><span class="s1">&#39;</span>
+                   <span class="s1">&#39;</span><span class="si">{extension}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extension</span><span class="o">=</span><span class="n">ext</span><span class="p">,</span> <span class="o">**</span><span class="n">format_dict</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">acquire_resource</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_path</span><span class="p">,</span> <span class="n">format_dict</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -397,7 +394,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">        :meth:`zip_file_contents` to the target path.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
+        <span class="kn">from</span> <span class="nn">zipfile</span> <span class="k">import</span> <span class="n">ZipFile</span>
 
         <span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">target_dir</span><span class="p">):</span>
@@ -407,13 +404,13 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
         <span class="n">shapefile_online</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
-        <span class="n">zfh</span> <span class="o">=</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">shapefile_online</span><span class="o">.</span><span class="n">read</span><span class="p">()),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+        <span class="n">zfh</span> <span class="o">=</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">shapefile_online</span><span class="o">.</span><span class="n">read</span><span class="p">()),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">member_path</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zip_file_contents</span><span class="p">(</span><span class="n">format_dict</span><span class="p">):</span>
             <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">member_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
             <span class="n">target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">target_path</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">ext</span>
             <span class="n">member</span> <span class="o">=</span> <span class="n">zfh</span><span class="o">.</span><span class="n">getinfo</span><span class="p">(</span><span class="n">member_path</span><span class="p">)</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
                 <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">zfh</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">member</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
         <span class="n">shapefile_online</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -436,37 +433,37 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">{resolution}_{name}.shp</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">default_spec</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s">&#39;natural_earth&#39;</span><span class="p">,</span> <span class="s">&#39;{category}&#39;</span><span class="p">,</span>
-                        <span class="s">&#39;{resolution}_{name}.shp&#39;</span><span class="p">)</span>
-        <span class="n">ne_path_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;{config[data_dir]}&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">default_spec</span><span class="p">)</span>
-        <span class="n">pre_path_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;{config[pre_existing_data_dir]}&#39;</span><span class="p">,</span>
+        <span class="n">default_spec</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s1">&#39;natural_earth&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{category}</span><span class="s1">&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;</span><span class="si">{resolution}</span><span class="s1">_</span><span class="si">{name}</span><span class="s1">.shp&#39;</span><span class="p">)</span>
+        <span class="n">ne_path_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{config[data_dir]}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">default_spec</span><span class="p">)</span>
+        <span class="n">pre_path_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{config[pre_existing_data_dir]}</span><span class="s1">&#39;</span><span class="p">,</span>
                                          <span class="o">*</span><span class="n">default_spec</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">NEShpDownloader</span><span class="p">(</span><span class="n">target_path_template</span><span class="o">=</span><span class="n">ne_path_template</span><span class="p">,</span>
                                <span class="n">pre_downloaded_path_template</span><span class="o">=</span><span class="n">pre_path_template</span><span class="p">)</span>
 
 
-<span class="c"># add a generic Natural Earth shapefile downloader to the config dictionary&#39;s</span>
-<span class="c"># &#39;downloaders&#39; section.</span>
-<span class="n">_ne_key</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s">&#39;natural_earth&#39;</span><span class="p">)</span>
-<span class="n">config</span><span class="p">[</span><span class="s">&#39;downloaders&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">_ne_key</span><span class="p">,</span>
+<span class="c1"># add a generic Natural Earth shapefile downloader to the config dictionary&#39;s</span>
+<span class="c1"># &#39;downloaders&#39; section.</span>
+<span class="n">_ne_key</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s1">&#39;natural_earth&#39;</span><span class="p">)</span>
+<span class="n">config</span><span class="p">[</span><span class="s1">&#39;downloaders&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">_ne_key</span><span class="p">,</span>
                                  <span class="n">NEShpDownloader</span><span class="o">.</span><span class="n">default_downloader</span><span class="p">())</span>
 
 
-<div class="viewcode-block" id="gshhs"><a class="viewcode-back" href="../../../tutorials/using_the_shapereader.html#cartopy.io.shapereader.gshhs">[docs]</a><span class="k">def</span> <span class="nf">gshhs</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="gshhs"><a class="viewcode-back" href="../../../tutorials/using_the_shapereader.html#cartopy.io.shapereader.gshhs">[docs]</a><span class="k">def</span> <span class="nf">gshhs</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the path to the requested GSHHS shapefile,</span>
 <span class="sd">    downloading and unziping if necessary.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c"># Get hold of the Downloader (typically a GSHHSShpDownloader instance)</span>
-    <span class="c"># and call its path method to get the appropriate shapefile (it will</span>
-    <span class="c"># download it if necessary).</span>
-    <span class="n">gshhs_downloader</span> <span class="o">=</span> <span class="n">Downloader</span><span class="o">.</span><span class="n">from_config</span><span class="p">((</span><span class="s">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s">&#39;gshhs&#39;</span><span class="p">,</span>
+    <span class="c1"># Get hold of the Downloader (typically a GSHHSShpDownloader instance)</span>
+    <span class="c1"># and call its path method to get the appropriate shapefile (it will</span>
+    <span class="c1"># download it if necessary).</span>
+    <span class="n">gshhs_downloader</span> <span class="o">=</span> <span class="n">Downloader</span><span class="o">.</span><span class="n">from_config</span><span class="p">((</span><span class="s1">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s1">&#39;gshhs&#39;</span><span class="p">,</span>
                                                <span class="n">scale</span><span class="p">,</span> <span class="n">level</span><span class="p">))</span>
-    <span class="n">format_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;config&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">,</span> <span class="s">&#39;scale&#39;</span><span class="p">:</span> <span class="n">scale</span><span class="p">,</span> <span class="s">&#39;level&#39;</span><span class="p">:</span> <span class="n">level</span><span class="p">}</span>
-    <span class="k">return</span> <span class="n">gshhs_downloader</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">format_dict</span><span class="p">)</span>
+    <span class="n">format_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;config&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">,</span> <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="n">scale</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="n">level</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">gshhs_downloader</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">format_dict</span><span class="p">)</span></div>
 
-</div>
+
 <span class="k">class</span> <span class="nc">GSHHSShpDownloader</span><span class="p">(</span><span class="n">Downloader</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Specialises :class:`cartopy.io.Downloader` to download the zipped</span>
@@ -477,17 +474,17 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">    (a number indicating the type of feature).</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">FORMAT_KEYS</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;config&#39;</span><span class="p">,</span> <span class="s">&#39;scale&#39;</span><span class="p">,</span> <span class="s">&#39;level&#39;</span><span class="p">)</span>
+    <span class="n">FORMAT_KEYS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;scale&#39;</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">)</span>
 
-    <span class="n">_GSHHS_URL_TEMPLATE</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;http://www.ngdc.noaa.gov/mgg/shorelines/data/&#39;</span>
-                           <span class="s">&#39;gshhs/oldversions/version2.2.0/&#39;</span>
-                           <span class="s">&#39;GSHHS_shp_2.2.0.zip&#39;</span><span class="p">)</span>
+    <span class="n">_GSHHS_URL_TEMPLATE</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https://www.ngdc.noaa.gov/mgg/shorelines/data/&#39;</span>
+                           <span class="s1">&#39;gshhs/oldversions/version2.2.0/&#39;</span>
+                           <span class="s1">&#39;GSHHS_shp_2.2.0.zip&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">url_template</span><span class="o">=</span><span class="n">_GSHHS_URL_TEMPLATE</span><span class="p">,</span>
-                 <span class="n">target_path_template</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                 <span class="n">pre_downloaded_path_template</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">GSHHSShpDownloader</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">url_template</span><span class="p">,</span>
+                 <span class="n">target_path_template</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">pre_downloaded_path_template</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GSHHSShpDownloader</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">url_template</span><span class="p">,</span>
                                                  <span class="n">target_path_template</span><span class="p">,</span>
                                                  <span class="n">pre_downloaded_path_template</span><span class="p">)</span>
 
@@ -497,26 +494,26 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">        GSHHS zip file for the specified resource.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;.shp&#39;</span><span class="p">,</span> <span class="s">&#39;.dbf&#39;</span><span class="p">,</span> <span class="s">&#39;.shx&#39;</span><span class="p">]:</span>
-            <span class="k">yield</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;GSHHS_shp&#39;</span><span class="p">,</span> <span class="s">&#39;{scale}&#39;</span><span class="p">,</span>
-                                <span class="s">&#39;GSHHS_{scale}_L{level}{extension}&#39;</span>
+        <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.shp&#39;</span><span class="p">,</span> <span class="s1">&#39;.dbf&#39;</span><span class="p">,</span> <span class="s1">&#39;.shx&#39;</span><span class="p">]:</span>
+            <span class="k">yield</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;GSHHS_shp&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{scale}</span><span class="s1">&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;GSHHS_</span><span class="si">{scale}</span><span class="s1">_L</span><span class="si">{level}{extension}</span><span class="s1">&#39;</span>
                                 <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extension</span><span class="o">=</span><span class="n">ext</span><span class="p">,</span> <span class="o">**</span><span class="n">format_dict</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">acquire_all_resources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">format_dict</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
+        <span class="kn">from</span> <span class="nn">zipfile</span> <span class="k">import</span> <span class="n">ZipFile</span>
 
-        <span class="c"># Download archive.</span>
+        <span class="c1"># Download archive.</span>
         <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">(</span><span class="n">format_dict</span><span class="p">)</span>
         <span class="n">shapefile_online</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-        <span class="n">zfh</span> <span class="o">=</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">shapefile_online</span><span class="o">.</span><span class="n">read</span><span class="p">()),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+        <span class="n">zfh</span> <span class="o">=</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">shapefile_online</span><span class="o">.</span><span class="n">read</span><span class="p">()),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
         <span class="n">shapefile_online</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-        <span class="c"># Iterate through all scales and levels and extract relevant files.</span>
+        <span class="c1"># Iterate through all scales and levels and extract relevant files.</span>
         <span class="n">modified_format_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">format_dict</span><span class="p">)</span>
-        <span class="n">scales</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;l&#39;</span><span class="p">,</span> <span class="s">&#39;i&#39;</span><span class="p">,</span> <span class="s">&#39;h&#39;</span><span class="p">,</span> <span class="s">&#39;f&#39;</span><span class="p">)</span>
+        <span class="n">scales</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">)</span>
         <span class="n">levels</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">scale</span><span class="p">,</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">scales</span><span class="p">,</span> <span class="n">levels</span><span class="p">):</span>
-            <span class="n">modified_format_dict</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&#39;scale&#39;</span><span class="p">:</span> <span class="n">scale</span><span class="p">,</span> <span class="s">&#39;level&#39;</span><span class="p">:</span> <span class="n">level</span><span class="p">})</span>
+            <span class="n">modified_format_dict</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="n">scale</span><span class="p">,</span> <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="n">level</span><span class="p">})</span>
             <span class="n">target_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_path</span><span class="p">(</span><span class="n">modified_format_dict</span><span class="p">)</span>
             <span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">target_dir</span><span class="p">):</span>
@@ -526,7 +523,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
                 <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">member_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
                 <span class="n">target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">target_path</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">ext</span>
                 <span class="n">member</span> <span class="o">=</span> <span class="n">zfh</span><span class="o">.</span><span class="n">getinfo</span><span class="p">(</span><span class="n">member_path</span><span class="p">)</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
                     <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">zfh</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">member</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
         <span class="n">zfh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -543,18 +540,18 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">            exist in the ``cartopy.config[&#39;repo_data_dir&#39;]`` directory.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">repo_fname_pattern</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s">&#39;repo_data_dir&#39;</span><span class="p">],</span>
-                                          <span class="s">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s">&#39;gshhs&#39;</span><span class="p">,</span> <span class="s">&#39;{scale}&#39;</span><span class="p">,</span>
-                                          <span class="s">&#39;GSHHS_{scale}_L?.shp&#39;</span><span class="p">)</span>
+        <span class="n">repo_fname_pattern</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;repo_data_dir&#39;</span><span class="p">],</span>
+                                          <span class="s1">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s1">&#39;gshhs&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{scale}</span><span class="s1">&#39;</span><span class="p">,</span>
+                                          <span class="s1">&#39;GSHHS_</span><span class="si">{scale}</span><span class="s1">_L?.shp&#39;</span><span class="p">)</span>
         <span class="n">repo_fname_pattern</span> <span class="o">=</span> <span class="n">repo_fname_pattern</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">format_dict</span><span class="p">)</span>
         <span class="n">repo_fnames</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">repo_fname_pattern</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">repo_fnames</span><span class="p">:</span>
-            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">repo_fnames</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;&gt;1 repo files found for GSHHS&#39;</span>
+            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">repo_fnames</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;&gt;1 repo files found for GSHHS&#39;</span>
             <span class="k">return</span> <span class="n">repo_fnames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">acquire_all_resources</span><span class="p">(</span><span class="n">format_dict</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">target_path</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&#39;Failed to download and extract GSHHS &#39;</span>
-                               <span class="s">&#39;shapefile to {!r}.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">target_path</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Failed to download and extract GSHHS &#39;</span>
+                               <span class="s1">&#39;shapefile to </span><span class="si">{!r}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">target_path</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">target_path</span>
 
     <span class="nd">@staticmethod</span>
@@ -574,20 +571,20 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">GSHHS_{scale}_L{level}.shp</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">default_spec</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s">&#39;gshhs&#39;</span><span class="p">,</span> <span class="s">&#39;{scale}&#39;</span><span class="p">,</span>
-                        <span class="s">&#39;GSHHS_{scale}_L{level}.shp&#39;</span><span class="p">)</span>
-        <span class="n">gshhs_path_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;{config[data_dir]}&#39;</span><span class="p">,</span>
+        <span class="n">default_spec</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s1">&#39;gshhs&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{scale}</span><span class="s1">&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;GSHHS_</span><span class="si">{scale}</span><span class="s1">_L</span><span class="si">{level}</span><span class="s1">.shp&#39;</span><span class="p">)</span>
+        <span class="n">gshhs_path_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{config[data_dir]}</span><span class="s1">&#39;</span><span class="p">,</span>
                                            <span class="o">*</span><span class="n">default_spec</span><span class="p">)</span>
-        <span class="n">pre_path_tmplt</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;{config[pre_existing_data_dir]}&#39;</span><span class="p">,</span>
+        <span class="n">pre_path_tmplt</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{config[pre_existing_data_dir]}</span><span class="s1">&#39;</span><span class="p">,</span>
                                       <span class="o">*</span><span class="n">default_spec</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">GSHHSShpDownloader</span><span class="p">(</span><span class="n">target_path_template</span><span class="o">=</span><span class="n">gshhs_path_template</span><span class="p">,</span>
                                   <span class="n">pre_downloaded_path_template</span><span class="o">=</span><span class="n">pre_path_tmplt</span><span class="p">)</span>
 
 
-<span class="c"># Add a GSHHS shapefile downloader to the config dictionary&#39;s</span>
-<span class="c"># &#39;downloaders&#39; section.</span>
-<span class="n">_gshhs_key</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s">&#39;gshhs&#39;</span><span class="p">)</span>
-<span class="n">config</span><span class="p">[</span><span class="s">&#39;downloaders&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">_gshhs_key</span><span class="p">,</span>
+<span class="c1"># Add a GSHHS shapefile downloader to the config dictionary&#39;s</span>
+<span class="c1"># &#39;downloaders&#39; section.</span>
+<span class="n">_gshhs_key</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;shapefiles&#39;</span><span class="p">,</span> <span class="s1">&#39;gshhs&#39;</span><span class="p">)</span>
+<span class="n">config</span><span class="p">[</span><span class="s1">&#39;downloaders&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">_gshhs_key</span><span class="p">,</span>
                                  <span class="n">GSHHSShpDownloader</span><span class="o">.</span><span class="n">default_downloader</span><span class="p">())</span>
 </pre></div>
 
@@ -597,7 +594,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -607,18 +604,21 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
           <a href="../../../cartopy_outline.html" title="Module outline"
              >outline</a> |</li>
         <li><a href="../../../index.html">home</a>|&nbsp;</li>
-        <li><a href="../../../gallery.html">gallery</a>|&nbsp;</li>
-        
+        <li><a href="../../../gallery/index.html.html">gallery</a>|&nbsp;</li>
 
-          <li><a href="../../index.html" >Module code</a> &raquo;</li>
-          <li><a href="../io.html" >cartopy.io</a> &raquo;</li> 
+
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../io.html" >cartopy.io</a> &#187;</li> 
       </ul>
     </div>
 
     <div class="footer">
-    <p style="text-align: left; float: left; margin: 0px; padding: 0 0 0 5px;">Documentation licensed under the <a href="http://reference.data.gov.uk/id/open-government-licence" rel="license">Open Government Licence</a></p>
-        &copy; <a href="../../../copyright.html">British Crown Copyright</a> 2011 - 2014, Met Office
+    <p style="text-align: left; float: left; margin: 0px; padding: 0 0 0 5px;">Documentation licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/" rel="license">Open Government Licence</a></p>
+        &copy; <a href="../../../copyright.html">British Crown Copyright</a> 2011 - 2017, Met Office
     </div>
+
+    <!-- Point to the *latest* version switcher. This will allow the latest versions to appear on older documentation. -->
+    <script type="text/javascript" src="http://scitools.org.uk/cartopy/docs/latest/_static/version_switch.js"></script>
 
 
   </body>

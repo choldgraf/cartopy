@@ -1,8 +1,0 @@
-.. _examples-features:
-
-features example
-----------------
-
-.. plot:: examples/features.py
-
-.. literalinclude:: features.py

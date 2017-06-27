@@ -1,8 +1,0 @@
-.. _examples-wmts:
-
-wmts example
-------------
-
-.. plot:: examples/wmts.py
-
-.. literalinclude:: wmts.py

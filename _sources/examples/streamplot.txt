@@ -1,8 +1,0 @@
-.. _examples-streamplot:
-
-streamplot example
-------------------
-
-.. plot:: examples/streamplot.py
-
-.. literalinclude:: streamplot.py

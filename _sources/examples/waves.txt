@@ -1,8 +1,0 @@
-.. _examples-waves:
-
-waves example
--------------
-
-.. plot:: examples/waves.py
-
-.. literalinclude:: waves.py

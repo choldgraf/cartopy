@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 
-plt.figure(figsize=(6.92280629527, 3))
-ax = plt.axes(projection=ccrs.InterruptedGoodeHomolosine())
+plt.figure(figsize=(0.1286, 3))
+ax = plt.axes(projection=ccrs.UTM(
+    zone=30))
 ax.coastlines(resolution='110m')
 ax.gridlines()

@@ -1,8 +1,0 @@
-.. _examples-srtm_shading:
-
-srtm_shading example
---------------------
-
-.. plot:: examples/srtm_shading.py
-
-.. literalinclude:: srtm_shading.py

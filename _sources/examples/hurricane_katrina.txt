@@ -1,8 +1,0 @@
-.. _examples-hurricane_katrina:
-
-hurricane_katrina example
--------------------------
-
-.. plot:: examples/hurricane_katrina.py
-
-.. literalinclude:: hurricane_katrina.py

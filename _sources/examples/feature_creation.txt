@@ -1,8 +1,0 @@
-.. _examples-feature_creation:
-
-feature_creation example
-------------------------
-
-.. plot:: examples/feature_creation.py
-
-.. literalinclude:: feature_creation.py

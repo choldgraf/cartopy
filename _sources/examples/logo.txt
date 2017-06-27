@@ -1,8 +1,0 @@
-.. _examples-logo:
-
-logo example
-------------
-
-.. plot:: examples/logo.py
-
-.. literalinclude:: logo.py
