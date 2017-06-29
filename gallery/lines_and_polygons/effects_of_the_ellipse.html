@@ -58,7 +58,7 @@
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -117,7 +117,7 @@ coastlines are shifted as a result of referencing the incorrect ellipse.</p>
 <img alt="../../_images/sphx_glr_effects_of_the_ellipse_001.png" class="align-center" src="../../_images/sphx_glr_effects_of_the_ellipse_001.png" />
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="kn">as</span> <span class="nn">ccrs</span>
 <span class="kn">import</span> <span class="nn">cartopy.feature</span>
-<span class="kn">from</span> <span class="nn">cartopy.io.img_tiles</span> <span class="kn">import</span> <span class="n">StamenTerrain</span>
+<span class="kn">from</span> <span class="nn">cartopy.io.img_tiles</span> <span class="kn">import</span> <a href="../../cartopy/io/img_tiles.html#cartopy.io.img_tiles.StamenTerrain" title="View documentation for cartopy.io.img_tiles.StamenTerrain"><span class="n">StamenTerrain</span></a>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span> <span class="k">as</span> <a href="http://matplotlib.org/api/lines_api.html#matplotlib.lines.Line2D" title="View documentation for matplotlib.lines.Line2D"><span class="n">Line</span></a>
 <span class="kn">from</span> <span class="nn">matplotlib.patheffects</span> <span class="kn">import</span> <a href="http://matplotlib.org/api/patheffects_api.html#matplotlib.patheffects.Stroke" title="View documentation for matplotlib.patheffects.Stroke"><span class="n">Stroke</span></a>
@@ -147,20 +147,20 @@ coastlines are shifted as a result of referencing the incorrect ellipse.</p>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="c1"># Define the two coordinate systems with different ellipses.</span>
-    <span class="n">wgs84</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(</span><span class="n">globe</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span><span class="p">(</span><span class="n">datum</span><span class="o">=</span><span class="s1">&#39;WGS84&#39;</span><span class="p">,</span>
+    <span class="n">wgs84</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">(</span><span class="n">globe</span><span class="o">=</span><a href="../../crs/index.html#cartopy.crs.Globe" title="View documentation for cartopy.crs.Globe"><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span></a><span class="p">(</span><span class="n">datum</span><span class="o">=</span><span class="s1">&#39;WGS84&#39;</span><span class="p">,</span>
                                               <span class="n">ellipse</span><span class="o">=</span><span class="s1">&#39;WGS84&#39;</span><span class="p">))</span>
-    <span class="n">sphere</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(</span><span class="n">globe</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span><span class="p">(</span><span class="n">datum</span><span class="o">=</span><span class="s1">&#39;WGS84&#39;</span><span class="p">,</span>
+    <span class="n">sphere</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">(</span><span class="n">globe</span><span class="o">=</span><a href="../../crs/index.html#cartopy.crs.Globe" title="View documentation for cartopy.crs.Globe"><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span></a><span class="p">(</span><span class="n">datum</span><span class="o">=</span><span class="s1">&#39;WGS84&#39;</span><span class="p">,</span>
                                                <span class="n">ellipse</span><span class="o">=</span><span class="s1">&#39;sphere&#39;</span><span class="p">))</span>
 
     <span class="c1"># Define the coordinate system of the data we have from Natural Earth and</span>
     <span class="c1"># acquire the 1:10m physical coastline shapefile.</span>
-    <span class="n">geodetic</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(</span><span class="n">globe</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span><span class="p">(</span><span class="n">datum</span><span class="o">=</span><span class="s1">&#39;WGS84&#39;</span><span class="p">))</span>
+    <span class="n">geodetic</span> <span class="o">=</span> <a href="../../crs/index.html#cartopy.crs.Geodetic" title="View documentation for cartopy.crs.Geodetic"><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span></a><span class="p">(</span><span class="n">globe</span><span class="o">=</span><a href="../../crs/index.html#cartopy.crs.Globe" title="View documentation for cartopy.crs.Globe"><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span></a><span class="p">(</span><span class="n">datum</span><span class="o">=</span><span class="s1">&#39;WGS84&#39;</span><span class="p">))</span>
     <span class="n">dataset</span> <span class="o">=</span> <span class="n">cartopy</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="s1">&#39;physical&#39;</span><span class="p">,</span>
                                                   <span class="n">name</span><span class="o">=</span><span class="s1">&#39;coastline&#39;</span><span class="p">,</span>
                                                   <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;10m&#39;</span><span class="p">)</span>
 
     <span class="c1"># Create a Stamen map tiler instance, and use its CRS for the GeoAxes.</span>
-    <span class="n">tiler</span> <span class="o">=</span> <span class="n">StamenTerrain</span><span class="p">()</span>
+    <span class="n">tiler</span> <span class="o">=</span> <a href="../../cartopy/io/img_tiles.html#cartopy.io.img_tiles.StamenTerrain" title="View documentation for cartopy.io.img_tiles.StamenTerrain"><span class="n">StamenTerrain</span></a><span class="p">()</span>
     <span class="n">fig</span> <span class="o">=</span> <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">tiler</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;The effect of incorrectly referencing the Solomon Islands&#39;</span><span class="p">)</span>
@@ -196,7 +196,7 @@ coastlines are shifted as a result of referencing the incorrect ellipse.</p>
 
     <span class="c1"># Create an inset GeoAxes showing the location of the Solomon Islands.</span>
     <span class="n">sub_ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.625</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span>
-                          <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+                          <span class="n">projection</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">())</span>
     <span class="n">sub_ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mi">110</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">geodetic</span><span class="p">)</span>
 
     <span class="c1"># Make a nice border around the inset axes.</span>
@@ -207,7 +207,7 @@ coastlines are shifted as a result of referencing the incorrect ellipse.</p>
     <span class="n">sub_ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cartopy</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">LAND</span><span class="p">)</span>
     <span class="n">sub_ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
     <span class="n">extent_box</span> <span class="o">=</span> <span class="n">sgeom</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">extent</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-    <span class="n">sub_ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">extent_box</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+    <span class="n">sub_ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">extent_box</span><span class="p">],</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
                           <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
     <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
@@ -217,7 +217,7 @@ coastlines are shifted as a result of referencing the incorrect ellipse.</p>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.920 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.684 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/effects_of_the_ellipse.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">effects_of_the_ellipse.py</span></code></a></div>
@@ -253,7 +253,7 @@ coastlines are shifted as a result of referencing the incorrect ellipse.</p>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

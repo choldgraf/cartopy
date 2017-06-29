@@ -205,7 +205,7 @@ data spaced equally in degrees from -180 to 180 and -90 to 90.
     if __name__ == '__main__':
         main()
 
-**Total running time of the script:** ( 0 minutes  10.895 seconds)
+**Total running time of the script:** ( 0 minutes  11.917 seconds)
 
 
 

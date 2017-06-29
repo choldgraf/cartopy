@@ -28,7 +28,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="copyright" title="Copyright" href="../../copyright.html" />
-    <link rel="next" title="Un Flag" href="un_flag.html" />
+    <link rel="next" title="UN Flag" href="un_flag.html" />
     <link rel="prev" title="Using Cartopy and AxesGrid toolkit" href="axes_grid_basic.html" />
  
 
@@ -49,7 +49,7 @@
           <a href="../../cartopy_outline.html" title="Module outline"
              accesskey="O">outline</a> |</li>
         <li class="right" >
-          <a href="un_flag.html" title="Un Flag"
+          <a href="un_flag.html" title="UN Flag"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="axes_grid_basic.html" title="Using Cartopy and AxesGrid toolkit"
@@ -58,7 +58,7 @@
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,7 +74,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
                         title="previous chapter">Using Cartopy and AxesGrid toolkit</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="un_flag.html"
-                        title="next chapter">Un Flag</a></p>
+                        title="next chapter">UN Flag</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -160,9 +160,9 @@ resolution background imagery provided by OpenStreetMap.</p>
     <span class="c1"># Plot the locations twice, first with the red concentric circles,</span>
     <span class="c1"># then with the blue rectangle.</span>
     <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="o">=</span> <span class="n">tube_locations</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">OSGB</span><span class="p">(),</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.OSGB" title="View documentation for cartopy.crs.OSGB"><span class="n">ccrs</span><span class="o">.</span><span class="n">OSGB</span></a><span class="p">(),</span>
             <span class="n">marker</span><span class="o">=</span><span class="n">concentric_circle</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">OSGB</span><span class="p">(),</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.OSGB" title="View documentation for cartopy.crs.OSGB"><span class="n">ccrs</span><span class="o">.</span><span class="n">OSGB</span></a><span class="p">(),</span>
             <span class="n">marker</span><span class="o">=</span><span class="n">rectangle</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;London underground locations&#39;</span><span class="p">)</span>
@@ -173,7 +173,7 @@ resolution background imagery provided by OpenStreetMap.</p>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.170 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.153 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/tube_stations.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">tube_stations.py</span></code></a></div>
@@ -200,7 +200,7 @@ resolution background imagery provided by OpenStreetMap.</p>
           <a href="../../cartopy_outline.html" title="Module outline"
              >outline</a> |</li>
         <li class="right" >
-          <a href="un_flag.html" title="Un Flag"
+          <a href="un_flag.html" title="UN Flag"
              >next</a> |</li>
         <li class="right" >
           <a href="axes_grid_basic.html" title="Using Cartopy and AxesGrid toolkit"
@@ -209,7 +209,7 @@ resolution background imagery provided by OpenStreetMap.</p>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

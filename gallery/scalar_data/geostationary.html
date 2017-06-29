@@ -28,6 +28,8 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="Map tile acquisition" href="eyja_volcano.html" />
+    <link rel="prev" title="Waves" href="waves.html" />
  
 
      <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
@@ -46,10 +48,17 @@
         <li class="right" >
           <a href="../../cartopy_outline.html" title="Module outline"
              accesskey="O">outline</a> |</li>
+        <li class="right" >
+          <a href="eyja_volcano.html" title="Map tile acquisition"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="waves.html" title="Waves"
+             accesskey="P">previous</a> |</li>
         <li><a href="../../index.html">home</a>|&nbsp;</li>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
- 
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,10 +69,16 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 </a>
 
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="waves.html"
+                        title="previous chapter">Waves</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="eyja_volcano.html"
+                        title="next chapter">Map tile acquisition</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/gallery/scalar_data/geostationary_sgskip.rst.txt"
+      <li><a href="../../_sources/gallery/scalar_data/geostationary.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -89,7 +104,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
           <div class="body" role="main">
             
   <div class="section" id="reprojecting-images-from-a-geostationary-projection">
-<span id="sphx-glr-gallery-scalar-data-geostationary-sgskip-py"></span><h1>Reprojecting images from a Geostationary projection<a class="headerlink" href="#reprojecting-images-from-a-geostationary-projection" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-gallery-scalar-data-geostationary-py"></span><h1>Reprojecting images from a Geostationary projection<a class="headerlink" href="#reprojecting-images-from-a-geostationary-projection" title="Permalink to this headline">¶</a></h1>
 <p>This example demonstrates Cartopy’s ability to project images into the desired
 projection on-the-fly. The image itself is retrieved from a URL and is loaded
 directly into memory without storing it intermediately into a file. It
@@ -97,6 +112,15 @@ represents pre-processed data from the Spinning Enhanced Visible and Infrared
 Imager onboard Meteosat Second Generation, which has been put into an image in
 the data’s native Geostationary coordinate system - it is then projected by
 cartopy into a global Miller map.</p>
+<img alt="../../_images/sphx_glr_geostationary_001.png" class="align-center" src="../../_images/sphx_glr_geostationary_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Retrieving</span> <span class="n">image</span><span class="o">...</span>
+<span class="n">Projecting</span> <span class="ow">and</span> <span class="n">plotting</span> <span class="n">image</span> <span class="p">(</span><span class="n">this</span> <span class="n">may</span> <span class="n">take</span> <span class="n">a</span> <span class="k">while</span><span class="p">)</span><span class="o">...</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
@@ -127,32 +151,34 @@ cartopy into a global Miller map.</p>
     <span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https://gist.github.com/pelson/5871263/raw/&#39;</span>
            <span class="s1">&#39;EIDA50_201211061300_clip2.png&#39;</span><span class="p">)</span>
     <span class="n">img_handle</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-    <span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">img_handle</span><span class="p">)</span>
-    <span class="n">img_proj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Geostationary</span><span class="p">(</span><span class="n">satellite_height</span><span class="o">=</span><span class="mi">35786000</span><span class="p">)</span>
+    <span class="n">img</span> <span class="o">=</span> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.imread" title="View documentation for matplotlib.pyplot.imread"><span class="n">plt</span><span class="o">.</span><span class="n">imread</span></a><span class="p">(</span><span class="n">img_handle</span><span class="p">)</span>
+    <span class="n">img_proj</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.Geostationary" title="View documentation for cartopy.crs.Geostationary"><span class="n">ccrs</span><span class="o">.</span><span class="n">Geostationary</span></a><span class="p">(</span><span class="n">satellite_height</span><span class="o">=</span><span class="mi">35786000</span><span class="p">)</span>
     <span class="n">img_extent</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">5500000</span><span class="p">,</span> <span class="mi">5500000</span><span class="p">,</span> <span class="o">-</span><span class="mi">5500000</span><span class="p">,</span> <span class="mi">5500000</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">img_proj</span><span class="p">,</span> <span class="n">img_extent</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span>
 
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Miller</span><span class="p">())</span>
+    <span class="n">fig</span> <span class="o">=</span> <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.Miller" title="View documentation for cartopy.crs.Miller"><span class="n">ccrs</span><span class="o">.</span><span class="n">Miller</span></a><span class="p">())</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Retrieving image...&#39;</span><span class="p">)</span>
     <span class="n">img</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">extent</span><span class="p">,</span> <span class="n">origin</span> <span class="o">=</span> <span class="n">geos_image</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Projecting and plotting image (this may take a while)...&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">crs</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 3 minutes  18.306 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../../_downloads/geostationary_sgskip.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">geostationary_sgskip.py</span></code></a></div>
+<a class="reference download internal" href="../../_downloads/geostationary.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">geostationary.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../../_downloads/geostationary_sgskip.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">geostationary_sgskip.ipynb</span></code></a></div>
+<a class="reference download internal" href="../../_downloads/geostationary.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">geostationary.ipynb</span></code></a></div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
 </div>
@@ -173,10 +199,17 @@ cartopy into a global Miller map.</p>
         <li class="right" >
           <a href="../../cartopy_outline.html" title="Module outline"
              >outline</a> |</li>
+        <li class="right" >
+          <a href="eyja_volcano.html" title="Map tile acquisition"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="waves.html" title="Waves"
+             >previous</a> |</li>
         <li><a href="../../index.html">home</a>|&nbsp;</li>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
- 
+
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

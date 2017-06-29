@@ -63,7 +63,7 @@ projections using special tick formatters.
     if __name__ == '__main__':
         main()
 
-**Total running time of the script:** ( 0 minutes  0.187 seconds)
+**Total running time of the script:** ( 0 minutes  0.163 seconds)
 
 
 

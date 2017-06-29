@@ -28,8 +28,8 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="copyright" title="Copyright" href="../../copyright.html" />
-    <link rel="next" title="Reprojecting images from a Geostationary projection" href="geostationary_sgskip.html" />
-    <link rel="prev" title="Un Flag" href="../miscellanea/un_flag.html" />
+    <link rel="next" title="Reprojecting images from a Geostationary projection" href="geostationary.html" />
+    <link rel="prev" title="UN Flag" href="../miscellanea/un_flag.html" />
  
 
      <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
@@ -49,16 +49,16 @@
           <a href="../../cartopy_outline.html" title="Module outline"
              accesskey="O">outline</a> |</li>
         <li class="right" >
-          <a href="geostationary_sgskip.html" title="Reprojecting images from a Geostationary projection"
+          <a href="geostationary.html" title="Reprojecting images from a Geostationary projection"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../miscellanea/un_flag.html" title="Un Flag"
+          <a href="../miscellanea/un_flag.html" title="UN Flag"
              accesskey="P">previous</a> |</li>
         <li><a href="../../index.html">home</a>|&nbsp;</li>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -71,9 +71,9 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="../miscellanea/un_flag.html"
-                        title="previous chapter">Un Flag</a></p>
+                        title="previous chapter">UN Flag</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="geostationary_sgskip.html"
+  <p class="topless"><a href="geostationary.html"
                         title="next chapter">Reprojecting images from a Geostationary projection</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -130,12 +130,12 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">fig</span> <span class="o">=</span> <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mollweide</span><span class="p">())</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.Mollweide" title="View documentation for cartopy.crs.Mollweide"><span class="n">ccrs</span><span class="o">.</span><span class="n">Mollweide</span></a><span class="p">())</span>
 
     <span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">sample_data</span><span class="p">()</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span>
-                <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+                <span class="n">transform</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">(),</span>
                 <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;nipy_spectral&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_global</span><span class="p">()</span>
@@ -146,7 +146,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.921 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  1.205 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/waves.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">waves.py</span></code></a></div>
@@ -173,16 +173,16 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
           <a href="../../cartopy_outline.html" title="Module outline"
              >outline</a> |</li>
         <li class="right" >
-          <a href="geostationary_sgskip.html" title="Reprojecting images from a Geostationary projection"
+          <a href="geostationary.html" title="Reprojecting images from a Geostationary projection"
              >next</a> |</li>
         <li class="right" >
-          <a href="../miscellanea/un_flag.html" title="Un Flag"
+          <a href="../miscellanea/un_flag.html" title="UN Flag"
              >previous</a> |</li>
         <li><a href="../../index.html">home</a>|&nbsp;</li>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

@@ -58,7 +58,7 @@
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -122,7 +122,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="sd">    regular PlateCarree space.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">RotatedPole</span><span class="p">(</span><span class="n">pole_longitude</span><span class="o">=</span><span class="mf">177.5</span><span class="p">,</span> <span class="n">pole_latitude</span><span class="o">=</span><span class="mf">37.5</span><span class="p">)</span>
+    <span class="n">crs</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.RotatedPole" title="View documentation for cartopy.crs.RotatedPole"><span class="n">ccrs</span><span class="o">.</span><span class="n">RotatedPole</span></a><span class="p">(</span><span class="n">pole_longitude</span><span class="o">=</span><span class="mf">177.5</span><span class="p">,</span> <span class="n">pole_latitude</span><span class="o">=</span><span class="mf">37.5</span><span class="p">)</span>
 
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">311.9</span><span class="p">,</span> <span class="mf">391.1</span><span class="p">,</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">23.6</span><span class="p">,</span> <span class="mf">24.8</span><span class="p">,</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -136,7 +136,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">fig</span> <span class="o">=</span> <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.Orthographic" title="View documentation for cartopy.crs.Orthographic"><span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span></a><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cartopy</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">OCEAN</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cartopy</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">LAND</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
@@ -154,7 +154,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.416 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.086 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/arrows.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">arrows.py</span></code></a></div>
@@ -190,7 +190,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

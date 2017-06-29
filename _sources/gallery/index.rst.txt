@@ -1,11 +1,11 @@
 :orphan:
 
-CartoPy Gallery
+Cartopy Gallery
 ---------------
 
-The following examples show off the functionality of CartoPy. They
+The following examples show off the functionality of Cartopy. They
 illustrate the kinds of things you can do with this library. For
-more examples, tutorials, and guides on how to use CartoPy, see
+more examples, tutorials, and guides on how to use Cartopy, see
 the :ref:`getting started <getting-started>` section.
 
 
@@ -102,7 +102,7 @@ Lines and polygons
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="">
+    <div class="sphx-glr-thumbcontainer" tooltip="Setting the boundary of an image to be circular. ">
 
 .. only:: html
 
@@ -386,9 +386,9 @@ Scalar data
 
 .. only:: html
 
-    .. figure:: /gallery/scalar_data/images/thumb/sphx_glr_geostationary_sgskip_thumb.png
+    .. figure:: /gallery/scalar_data/images/thumb/sphx_glr_geostationary_thumb.png
 
-        :ref:`sphx_glr_gallery_scalar_data_geostationary_sgskip.py`
+        :ref:`sphx_glr_gallery_scalar_data_geostationary.py`
 
 .. raw:: html
 
@@ -398,7 +398,7 @@ Scalar data
 .. toctree::
    :hidden:
 
-   /gallery/scalar_data/geostationary_sgskip
+   /gallery/scalar_data/geostationary
 
 .. raw:: html
 

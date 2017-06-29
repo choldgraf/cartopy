@@ -3,9 +3,10 @@
 .. _sphx_glr_gallery_lines_and_polygons_always_circular_stereo.py:
 
 
-Always Circular Stereo
+Keep Boundary Circular
 ----------------------
 
+Setting the boundary of an image to be circular.
 
 
 
@@ -63,7 +64,7 @@ Always Circular Stereo
     if __name__ == '__main__':
         main()
 
-**Total running time of the script:** ( 0 minutes  0.248 seconds)
+**Total running time of the script:** ( 0 minutes  0.321 seconds)
 
 
 

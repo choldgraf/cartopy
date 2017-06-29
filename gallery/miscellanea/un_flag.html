@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Un Flag &#8212; cartopy 0.15.1 documentation</title>
+    <title>UN Flag &#8212; cartopy 0.15.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -58,7 +58,7 @@
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -104,7 +104,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
           <div class="body" role="main">
             
   <div class="section" id="un-flag">
-<span id="sphx-glr-gallery-miscellanea-un-flag-py"></span><h1>Un Flag<a class="headerlink" href="#un-flag" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-gallery-miscellanea-un-flag-py"></span><h1>UN Flag<a class="headerlink" href="#un-flag" title="Permalink to this headline">¶</a></h1>
 <img alt="../../_images/sphx_glr_un_flag_001.png" class="align-center" src="../../_images/sphx_glr_un_flag_001.png" />
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="kn">as</span> <span class="nn">ccrs</span>
 <span class="kn">import</span> <span class="nn">cartopy.feature</span>
@@ -197,8 +197,8 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
     <span class="c1"># Set up the Azimuthal Equidistant and Plate Carree projections</span>
     <span class="c1"># for later use.</span>
-    <span class="n">az_eq</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">AzimuthalEquidistant</span><span class="p">(</span><span class="n">central_latitude</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-    <span class="n">pc</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
+    <span class="n">az_eq</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.AzimuthalEquidistant" title="View documentation for cartopy.crs.AzimuthalEquidistant"><span class="n">ccrs</span><span class="o">.</span><span class="n">AzimuthalEquidistant</span></a><span class="p">(</span><span class="n">central_latitude</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">pc</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">()</span>
 
     <span class="c1"># Pick a suitable location for the map (which is in an Azimuthal</span>
     <span class="c1"># Equidistant projection).</span>
@@ -209,7 +209,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
     <span class="n">ax</span><span class="o">.</span><span class="n">outline_patch</span><span class="o">.</span><span class="n">set_edgecolor</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
 
     <span class="c1"># We want the map to go down to -60 degrees latitude.</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">())</span>
 
     <span class="c1"># Importantly, we want the axes to be circular at the -60 latitude</span>
     <span class="c1"># rather than cartopy&#39;s default behaviour of zooming in and becoming</span>
@@ -260,7 +260,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.089 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.458 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/un_flag.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">un_flag.py</span></code></a></div>
@@ -296,7 +296,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

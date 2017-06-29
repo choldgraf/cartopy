@@ -58,7 +58,7 @@
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -162,7 +162,7 @@ data spaced equally in degrees from -180 to 180 and -90 to 90.</p>
         <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Product Valid At:&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
             <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="o">-</span><span class="mi">17</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M&#39;</span><span class="p">)</span>
 
-    <span class="n">img_proj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
+    <span class="n">img_proj</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">()</span>
     <span class="n">img_extent</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">img_proj</span><span class="p">,</span> <span class="n">img_extent</span><span class="p">,</span> <span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">dt</span>
 
@@ -247,7 +247,7 @@ data spaced equally in degrees from -180 to 180 and -90 to 90.</p>
         <span class="n">pole_lat</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">+</span> <span class="n">lat</span>
         <span class="n">central_rot_lng</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="n">rotated_pole</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">RotatedPole</span><span class="p">(</span><span class="n">pole_latitude</span><span class="o">=</span><span class="n">pole_lat</span><span class="p">,</span>
+    <span class="n">rotated_pole</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.RotatedPole" title="View documentation for cartopy.crs.RotatedPole"><span class="n">ccrs</span><span class="o">.</span><span class="n">RotatedPole</span></a><span class="p">(</span><span class="n">pole_latitude</span><span class="o">=</span><span class="n">pole_lat</span><span class="p">,</span>
                                     <span class="n">pole_longitude</span><span class="o">=</span><span class="n">pole_lng</span><span class="p">,</span>
                                     <span class="n">central_rotated_longitude</span><span class="o">=</span><span class="n">central_rot_lng</span><span class="p">)</span>
 
@@ -269,10 +269,10 @@ data spaced equally in degrees from -180 to 180 and -90 to 90.</p>
     <span class="c1"># the aurora is most likely.</span>
 
     <span class="c1"># ax1 for Northern Hemisphere</span>
-    <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">))</span>
+    <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.Orthographic" title="View documentation for cartopy.crs.Orthographic"><span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">))</span>
 
     <span class="c1"># ax2 for Southern Hemisphere</span>
-    <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">))</span>
+    <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.Orthographic" title="View documentation for cartopy.crs.Orthographic"><span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span></a><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">))</span>
 
     <span class="n">img</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">extent</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">aurora_forecast</span><span class="p">()</span>
 
@@ -292,7 +292,7 @@ data spaced equally in degrees from -180 to 180 and -90 to 90.</p>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  10.895 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  11.917 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/aurora_forecast.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">aurora_forecast.py</span></code></a></div>
@@ -328,7 +328,7 @@ data spaced equally in degrees from -180 to 180 and -90 to 90.</p>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

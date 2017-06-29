@@ -12,6 +12,9 @@ into a single image and displayed in the cartopy GeoAxes.
 
 .. _examples-eyja_volcano:
 
+Grabbing the map tiles
+======================
+
 
 
 
@@ -24,7 +27,6 @@ into a single image and displayed in the cartopy GeoAxes.
 
 .. code-block:: python
 
-    # -*- coding: utf-8 -*-
     import matplotlib.pyplot as plt
     from matplotlib.transforms import offset_copy
 
@@ -69,7 +71,7 @@ into a single image and displayed in the cartopy GeoAxes.
     if __name__ == '__main__':
         main()
 
-**Total running time of the script:** ( 0 minutes  0.140 seconds)
+**Total running time of the script:** ( 0 minutes  0.141 seconds)
 
 
 

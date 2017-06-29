@@ -131,7 +131,7 @@ coastlines are shifted as a result of referencing the incorrect ellipse.
     if __name__ == '__main__':
         main()
 
-**Total running time of the script:** ( 0 minutes  0.920 seconds)
+**Total running time of the script:** ( 0 minutes  0.684 seconds)
 
 
 

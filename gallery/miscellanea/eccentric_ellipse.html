@@ -58,7 +58,7 @@
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -152,9 +152,9 @@ matching eccentricity.</p>
     <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">smaller_image</span><span class="p">)</span>
     <span class="c1"># We define the semimajor and semiminor axes, but must also tell the</span>
     <span class="c1"># globe not to use the WGS84 ellipse, which is its default behaviour.</span>
-    <span class="n">img_globe</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span><span class="p">(</span><span class="n">semimajor_axis</span><span class="o">=</span><span class="mf">285000.</span><span class="p">,</span> <span class="n">semiminor_axis</span><span class="o">=</span><span class="mf">229000.</span><span class="p">,</span>
+    <span class="n">img_globe</span> <span class="o">=</span> <a href="../../crs/index.html#cartopy.crs.Globe" title="View documentation for cartopy.crs.Globe"><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span></a><span class="p">(</span><span class="n">semimajor_axis</span><span class="o">=</span><span class="mf">285000.</span><span class="p">,</span> <span class="n">semiminor_axis</span><span class="o">=</span><span class="mf">229000.</span><span class="p">,</span>
                            <span class="n">ellipse</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
-    <span class="n">img_proj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(</span><span class="n">globe</span><span class="o">=</span><span class="n">img_globe</span><span class="p">)</span>
+    <span class="n">img_proj</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">(</span><span class="n">globe</span><span class="o">=</span><span class="n">img_globe</span><span class="p">)</span>
     <span class="n">img_extent</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">895353.906273091</span><span class="p">,</span> <span class="mf">895353.906273091</span><span class="p">,</span>
                   <span class="mf">447676.9531365455</span><span class="p">,</span> <span class="o">-</span><span class="mf">447676.9531365455</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">img_globe</span><span class="p">,</span> <span class="n">img_proj</span><span class="p">,</span> <span class="n">img_extent</span>
@@ -162,7 +162,7 @@ matching eccentricity.</p>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">img</span><span class="p">,</span> <span class="n">globe</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">extent</span> <span class="o">=</span> <span class="n">vesta_image</span><span class="p">()</span>
-    <span class="n">projection</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Geostationary</span><span class="p">(</span><span class="n">globe</span><span class="o">=</span><span class="n">globe</span><span class="p">)</span>
+    <span class="n">projection</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.Geostationary" title="View documentation for cartopy.crs.Geostationary"><span class="n">ccrs</span><span class="o">.</span><span class="n">Geostationary</span></a><span class="p">(</span><span class="n">globe</span><span class="o">=</span><span class="n">globe</span><span class="p">)</span>
 
     <span class="n">fig</span> <span class="o">=</span> <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
@@ -176,7 +176,7 @@ matching eccentricity.</p>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  12.958 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  13.097 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/eccentric_ellipse.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">eccentric_ellipse.py</span></code></a></div>
@@ -212,7 +212,7 @@ matching eccentricity.</p>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

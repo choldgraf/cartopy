@@ -29,7 +29,7 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="copyright" title="Copyright" href="../../copyright.html" />
     <link rel="next" title="The effect of badly referencing an ellipse" href="effects_of_the_ellipse.html" />
-    <link rel="prev" title="Always Circular Stereo" href="always_circular_stereo.html" />
+    <link rel="prev" title="Keep Boundary Circular" href="always_circular_stereo.html" />
  
 
      <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
@@ -52,13 +52,13 @@
           <a href="effects_of_the_ellipse.html" title="The effect of badly referencing an ellipse"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="always_circular_stereo.html" title="Always Circular Stereo"
+          <a href="always_circular_stereo.html" title="Keep Boundary Circular"
              accesskey="P">previous</a> |</li>
         <li><a href="../../index.html">home</a>|&nbsp;</li>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -71,7 +71,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="always_circular_stereo.html"
-                        title="previous chapter">Always Circular Stereo</a></p>
+                        title="previous chapter">Keep Boundary Circular</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="effects_of_the_ellipse.html"
                         title="next chapter">The effect of badly referencing an ellipse</a></p>
@@ -139,12 +139,12 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">fig</span> <span class="o">=</span> <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">())</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">projection</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.LambertConformal" title="View documentation for cartopy.crs.LambertConformal"><span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span></a><span class="p">())</span>
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">125</span><span class="p">,</span> <span class="o">-</span><span class="mf">66.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">125</span><span class="p">,</span> <span class="o">-</span><span class="mf">66.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <a href="../../crs/index.html#cartopy.crs.Geodetic" title="View documentation for cartopy.crs.Geodetic"><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span></a><span class="p">())</span>
 
     <span class="n">shapename</span> <span class="o">=</span> <span class="s1">&#39;admin_1_states_provinces_lakes_shp&#39;</span>
-    <span class="n">states_shp</span> <span class="o">=</span> <span class="n">shpreader</span><span class="o">.</span><span class="n">natural_earth</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;110m&#39;</span><span class="p">,</span>
+    <span class="n">states_shp</span> <span class="o">=</span> <a href="../../tutorials/using_the_shapereader.html#cartopy.io.shapereader.natural_earth" title="View documentation for cartopy.io.shapereader.natural_earth"><span class="n">shpreader</span><span class="o">.</span><span class="n">natural_earth</span></a><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;110m&#39;</span><span class="p">,</span>
                                          <span class="n">category</span><span class="o">=</span><span class="s1">&#39;cultural&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">shapename</span><span class="p">)</span>
 
     <span class="n">lons</span><span class="p">,</span> <span class="n">lats</span> <span class="o">=</span> <span class="n">sample_data</span><span class="p">()</span>
@@ -164,7 +164,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
     <span class="c1"># distance)</span>
     <span class="n">track_buffer</span> <span class="o">=</span> <span class="n">track</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">shpreader</span><span class="o">.</span><span class="n">Reader</span><span class="p">(</span><span class="n">states_shp</span><span class="p">)</span><span class="o">.</span><span class="n">geometries</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <a href="../../tutorials/using_the_shapereader.html#cartopy.io.shapereader.Reader" title="View documentation for cartopy.io.shapereader.Reader"><span class="n">shpreader</span><span class="o">.</span><span class="n">Reader</span></a><span class="p">(</span><span class="n">states_shp</span><span class="p">)</span><span class="o">.</span><span class="n">geometries</span><span class="p">():</span>
         <span class="c1"># pick a default color for the land with a black outline,</span>
         <span class="c1"># this will change if the storm intersects with our track</span>
         <span class="n">facecolor</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.9375</span><span class="p">,</span> <span class="mf">0.9375</span><span class="p">,</span> <span class="mf">0.859375</span><span class="p">]</span>
@@ -175,12 +175,12 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <span class="k">elif</span> <span class="n">state</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">track_buffer</span><span class="p">):</span>
             <span class="n">facecolor</span> <span class="o">=</span> <span class="s1">&#39;#FF7E00&#39;</span>
 
-        <span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">state</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">state</span><span class="p">],</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">(),</span>
                           <span class="n">facecolor</span><span class="o">=</span><span class="n">facecolor</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">edgecolor</span><span class="p">)</span>
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">track_buffer</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">track_buffer</span><span class="p">],</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">(),</span>
                       <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#C8A2C8&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">track</span><span class="p">],</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">([</span><span class="n">track</span><span class="p">],</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">(),</span>
                       <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 
     <span class="c1"># make two proxy artists to add to a legend</span>
@@ -198,7 +198,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.254 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.241 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/hurricane_katrina.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">hurricane_katrina.py</span></code></a></div>
@@ -228,13 +228,13 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
           <a href="effects_of_the_ellipse.html" title="The effect of badly referencing an ellipse"
              >next</a> |</li>
         <li class="right" >
-          <a href="always_circular_stereo.html" title="Always Circular Stereo"
+          <a href="always_circular_stereo.html" title="Keep Boundary Circular"
              >previous</a> |</li>
         <li><a href="../../index.html">home</a>|&nbsp;</li>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

@@ -28,7 +28,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="copyright" title="Copyright" href="../../copyright.html" />
-    <link rel="next" title="Always Circular Stereo" href="always_circular_stereo.html" />
+    <link rel="next" title="Keep Boundary Circular" href="always_circular_stereo.html" />
     <link rel="prev" title="Rotated pole boxes" href="rotated_pole.html" />
  
 
@@ -49,7 +49,7 @@
           <a href="../../cartopy_outline.html" title="Module outline"
              accesskey="O">outline</a> |</li>
         <li class="right" >
-          <a href="always_circular_stereo.html" title="Always Circular Stereo"
+          <a href="always_circular_stereo.html" title="Keep Boundary Circular"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="rotated_pole.html" title="Rotated pole boxes"
@@ -58,7 +58,7 @@
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -74,7 +74,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
                         title="previous chapter">Rotated pole boxes</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="always_circular_stereo.html"
-                        title="next chapter">Always Circular Stereo</a></p>
+                        title="next chapter">Keep Boundary Circular</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -114,14 +114,14 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">fig</span> <span class="o">=</span> <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">())</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mi">80</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
 
     <span class="c1"># Put a background image on for nice sea rendering.</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">stock_img</span><span class="p">()</span>
 
     <span class="c1"># Create a feature for States/Admin 1 regions at 1:50m from Natural Earth</span>
-    <span class="n">states_provinces</span> <span class="o">=</span> <span class="n">cfeature</span><span class="o">.</span><span class="n">NaturalEarthFeature</span><span class="p">(</span>
+    <span class="n">states_provinces</span> <span class="o">=</span> <a href="../../matplotlib/feature_interface.html#cartopy.feature.NaturalEarthFeature" title="View documentation for cartopy.feature.NaturalEarthFeature"><span class="n">cfeature</span><span class="o">.</span><span class="n">NaturalEarthFeature</span></a><span class="p">(</span>
         <span class="n">category</span><span class="o">=</span><span class="s1">&#39;cultural&#39;</span><span class="p">,</span>
         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;admin_1_states_provinces_lines&#39;</span><span class="p">,</span>
         <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;50m&#39;</span><span class="p">,</span>
@@ -148,7 +148,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.136 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.191 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/feature_creation.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">feature_creation.py</span></code></a></div>
@@ -175,7 +175,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
           <a href="../../cartopy_outline.html" title="Module outline"
              >outline</a> |</li>
         <li class="right" >
-          <a href="always_circular_stereo.html" title="Always Circular Stereo"
+          <a href="always_circular_stereo.html" title="Keep Boundary Circular"
              >next</a> |</li>
         <li class="right" >
           <a href="rotated_pole.html" title="Rotated pole boxes"
@@ -184,7 +184,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

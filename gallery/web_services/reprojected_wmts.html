@@ -58,7 +58,7 @@
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -125,14 +125,14 @@ and Atmospheric Administration (NOAA).</p>
     <span class="n">layer_name</span> <span class="o">=</span> <span class="s1">&#39;VIIRS_CityLights_2012&#39;</span>
 
     <span class="c1"># Create a Cartopy crs for plain and rotated lat-lon projections.</span>
-    <span class="n">plain_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
-    <span class="n">rotated_crs</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">RotatedPole</span><span class="p">(</span><span class="n">pole_longitude</span><span class="o">=</span><span class="mf">120.0</span><span class="p">,</span> <span class="n">pole_latitude</span><span class="o">=</span><span class="mf">45.0</span><span class="p">)</span>
+    <span class="n">plain_crs</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">()</span>
+    <span class="n">rotated_crs</span> <span class="o">=</span> <a href="../../crs/projections.html#cartopy.crs.RotatedPole" title="View documentation for cartopy.crs.RotatedPole"><span class="n">ccrs</span><span class="o">.</span><span class="n">RotatedPole</span></a><span class="p">(</span><span class="n">pole_longitude</span><span class="o">=</span><span class="mf">120.0</span><span class="p">,</span> <span class="n">pole_latitude</span><span class="o">=</span><span class="mf">45.0</span><span class="p">)</span>
 
     <span class="n">fig</span> <span class="o">=</span> <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
 
     <span class="c1"># Plot WMTS data in a specific region, over a plain lat-lon map.</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">plain_crs</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">58</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">58</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">())</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;50m&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
     <span class="c1"># Add WMTS imaging.</span>
@@ -153,7 +153,7 @@ and Atmospheric Administration (NOAA).</p>
     <span class="n">plot_city_lights</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  3.852 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  3.295 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/reprojected_wmts.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">reprojected_wmts.py</span></code></a></div>
@@ -189,7 +189,7 @@ and Atmospheric Administration (NOAA).</p>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

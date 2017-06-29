@@ -68,7 +68,7 @@ Plotting arrows.
     if __name__ == '__main__':
         main()
 
-**Total running time of the script:** ( 0 minutes  0.416 seconds)
+**Total running time of the script:** ( 0 minutes  0.086 seconds)
 
 
 

@@ -29,7 +29,7 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="copyright" title="Copyright" href="../../copyright.html" />
     <link rel="next" title="Plotting the Aurora Forecast from NOAA on Orthographic Polar Projection" href="aurora_forecast.html" />
-    <link rel="prev" title="Reprojecting images from a Geostationary projection" href="geostationary_sgskip.html" />
+    <link rel="prev" title="Reprojecting images from a Geostationary projection" href="geostationary.html" />
  
 
      <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
@@ -52,13 +52,13 @@
           <a href="aurora_forecast.html" title="Plotting the Aurora Forecast from NOAA on Orthographic Polar Projection"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="geostationary_sgskip.html" title="Reprojecting images from a Geostationary projection"
+          <a href="geostationary.html" title="Reprojecting images from a Geostationary projection"
              accesskey="P">previous</a> |</li>
         <li><a href="../../index.html">home</a>|&nbsp;</li>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -69,8 +69,16 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 </a>
 
 
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Map tile acquisition</a><ul>
+<li><a class="reference internal" href="#grabbing-the-map-tiles">Grabbing the map tiles</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="geostationary_sgskip.html"
+  <p class="topless"><a href="geostationary.html"
                         title="previous chapter">Reprojecting images from a Geostationary projection</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="aurora_forecast.html"
@@ -108,9 +116,10 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <p>Demonstrates cartopy’s ability to draw map tiles which are downloaded on
 demand from the Stamen tile server. Internally these tiles are then combined
 into a single image and displayed in the cartopy GeoAxes.</p>
-<img alt="../../_images/sphx_glr_eyja_volcano_001.png" class="align-center" id="examples-eyja-volcano" src="../../_images/sphx_glr_eyja_volcano_001.png" />
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="section" id="grabbing-the-map-tiles">
+<span id="examples-eyja-volcano"></span><h2>Grabbing the map tiles<a class="headerlink" href="#grabbing-the-map-tiles" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/sphx_glr_eyja_volcano_001.png" class="align-center" src="../../_images/sphx_glr_eyja_volcano_001.png" />
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">matplotlib.transforms</span> <span class="kn">import</span> <span class="n">offset_copy</span>
 
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="kn">as</span> <span class="nn">ccrs</span>
@@ -119,7 +128,7 @@ into a single image and displayed in the cartopy GeoAxes.</p>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="c1"># Create a Stamen Terrain instance.</span>
-    <span class="n">stamen_terrain</span> <span class="o">=</span> <span class="n">cimgt</span><span class="o">.</span><span class="n">StamenTerrain</span><span class="p">()</span>
+    <span class="n">stamen_terrain</span> <span class="o">=</span> <a href="../../cartopy/io/img_tiles.html#cartopy.io.img_tiles.StamenTerrain" title="View documentation for cartopy.io.img_tiles.StamenTerrain"><span class="n">cimgt</span><span class="o">.</span><span class="n">StamenTerrain</span></a><span class="p">()</span>
 
     <span class="n">fig</span> <span class="o">=</span> <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
 
@@ -134,13 +143,13 @@ into a single image and displayed in the cartopy GeoAxes.</p>
 
     <span class="c1"># Add a marker for the Eyjafjallajökull volcano.</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="mf">19.613333</span><span class="p">,</span> <span class="mf">63.62</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">())</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><a href="../../crs/index.html#cartopy.crs.Geodetic" title="View documentation for cartopy.crs.Geodetic"><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span></a><span class="p">())</span>
 
     <span class="c1"># Use the cartopy interface to create a matplotlib transform object</span>
     <span class="c1"># for the Geodetic coordinate system. We will use this along with</span>
     <span class="c1"># matplotlib&#39;s offset_copy function to define a coordinate system which</span>
     <span class="c1"># translates the text by 25 pixels to the left.</span>
-    <span class="n">geodetic_transform</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">()</span><span class="o">.</span><span class="n">_as_mpl_transform</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">geodetic_transform</span> <span class="o">=</span> <a href="../../crs/index.html#cartopy.crs.Geodetic" title="View documentation for cartopy.crs.Geodetic"><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span></a><span class="p">()</span><span class="o">.</span><span class="n">_as_mpl_transform</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
     <span class="n">text_transform</span> <span class="o">=</span> <span class="n">offset_copy</span><span class="p">(</span><span class="n">geodetic_transform</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;dots&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=-</span><span class="mi">25</span><span class="p">)</span>
 
     <span class="c1"># Add text 25 pixels to the left of the volcano.</span>
@@ -155,7 +164,7 @@ into a single image and displayed in the cartopy GeoAxes.</p>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.140 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.141 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/eyja_volcano.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">eyja_volcano.py</span></code></a></div>
@@ -163,6 +172,7 @@ into a single image and displayed in the cartopy GeoAxes.</p>
 <a class="reference download internal" href="../../_downloads/eyja_volcano.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">eyja_volcano.ipynb</span></code></a></div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+</div>
 </div>
 
 
@@ -185,13 +195,13 @@ into a single image and displayed in the cartopy GeoAxes.</p>
           <a href="aurora_forecast.html" title="Plotting the Aurora Forecast from NOAA on Orthographic Polar Projection"
              >next</a> |</li>
         <li class="right" >
-          <a href="geostationary_sgskip.html" title="Reprojecting images from a Geostationary projection"
+          <a href="geostationary.html" title="Reprojecting images from a Geostationary projection"
              >previous</a> |</li>
         <li><a href="../../index.html">home</a>|&nbsp;</li>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

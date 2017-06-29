@@ -58,7 +58,7 @@
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -68,6 +68,14 @@
 border="0" alt="Cartopy" style="margin-left: -60px;"/>
 </a>
 
+
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Interactive WMTS (Web Map Tile Service)</a><ul>
+<li><a class="reference internal" href="#downloading-and-plotting-tiles">Downloading and plotting tiles</a></li>
+</ul>
+</li>
+</ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="image_tiles.html"
@@ -113,7 +121,9 @@ It does not vary over time.</p>
 <p>The imagery was collected by the Suomi National Polar-orbiting Partnership
 (Suomi NPP) weather satellite operated by the United States National Oceanic
 and Atmospheric Administration (NOAA).</p>
-<img alt="../../_images/sphx_glr_wmts_001.png" class="align-center" id="examples-wmts" src="../../_images/sphx_glr_wmts_001.png" />
+<div class="section" id="downloading-and-plotting-tiles">
+<span id="examples-wmts"></span><h2>Downloading and plotting tiles<a class="headerlink" href="#downloading-and-plotting-tiles" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/sphx_glr_wmts_001.png" class="align-center" src="../../_images/sphx_glr_wmts_001.png" />
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="kn">as</span> <span class="nn">ccrs</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
@@ -123,7 +133,7 @@ and Atmospheric Administration (NOAA).</p>
     <span class="n">layer</span> <span class="o">=</span> <span class="s1">&#39;VIIRS_CityLights_2012&#39;</span>
 
     <span class="n">fig</span> <span class="o">=</span> <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure" title="View documentation for matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><a href="../../crs/projections.html#cartopy.crs.PlateCarree" title="View documentation for cartopy.crs.PlateCarree"><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span></a><span class="p">())</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">add_wmts</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">layer</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">((</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
 
@@ -135,7 +145,7 @@ and Atmospheric Administration (NOAA).</p>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  3.056 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  1.795 seconds)</p>
 <div class="sphx-glr-footer docutils container">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/wmts.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">wmts.py</span></code></a></div>
@@ -143,6 +153,7 @@ and Atmospheric Administration (NOAA).</p>
 <a class="reference download internal" href="../../_downloads/wmts.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">wmts.ipynb</span></code></a></div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+</div>
 </div>
 
 
@@ -171,7 +182,7 @@ and Atmospheric Administration (NOAA).</p>
         <li><a href="../index.html">gallery</a>|&nbsp;</li>
 
 
-          <li class="nav-item nav-item-1"><a href="../index.html" >CartoPy Gallery</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Cartopy Gallery</a> &#187;</li> 
       </ul>
     </div>
 

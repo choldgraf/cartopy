@@ -19,6 +19,9 @@ and Atmospheric Administration (NOAA).
 
 .. _examples-wmts:
 
+Downloading and plotting tiles
+==============================
+
 
 
 
@@ -52,7 +55,7 @@ and Atmospheric Administration (NOAA).
     if __name__ == '__main__':
         main()
 
-**Total running time of the script:** ( 0 minutes  3.056 seconds)
+**Total running time of the script:** ( 0 minutes  1.795 seconds)
 
 
 
