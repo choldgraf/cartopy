@@ -43,13 +43,3 @@ coordinate reference systems which are 3 dimensional and could not be drawn dire
 There is also a function for calling epsg.io with a specified code, returning the corresponding cartopy projection, see below.
 
 .. autofunction:: cartopy.crs.epsg
-
-List of CRS classes
-===================
-
-.. autosummary::
-   :toctree: _as_gen
-   :template: automodule.rst
-   :nosignatures:
-
-   cartopy.crs

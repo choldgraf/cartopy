@@ -650,13 +650,13 @@ Web services
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Python source code: gallery_python.zip <//Users/choldgraf/Dropbox/github/forks/python/cartopy/docs/source/gallery/gallery_python.zip>`
+    :download:`Download all examples in Python source code: gallery_python.zip <//Users/choldgraf/Dropbox/github/forks/python/geo/cartopy/docs/source/gallery/gallery_python.zip>`
 
 
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Jupyter notebooks: gallery_jupyter.zip <//Users/choldgraf/Dropbox/github/forks/python/cartopy/docs/source/gallery/gallery_jupyter.zip>`
+    :download:`Download all examples in Jupyter notebooks: gallery_jupyter.zip <//Users/choldgraf/Dropbox/github/forks/python/geo/cartopy/docs/source/gallery/gallery_jupyter.zip>`
 
 .. rst-class:: sphx-glr-signature
 
