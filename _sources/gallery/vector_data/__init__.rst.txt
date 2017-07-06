@@ -1,6 +1,6 @@
 
 
-.. _sphx_glr_gallery___init__.py:
+.. _sphx_glr_gallery_vector_data___init__.py:
 
 
 REMOVE

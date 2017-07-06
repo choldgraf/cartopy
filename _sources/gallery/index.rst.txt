@@ -9,6 +9,26 @@ more examples, tutorials, and guides on how to use Cartopy, see
 the :ref:`getting started <getting-started>` section.
 
 
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="">
+
+.. only:: html
+
+    .. figure:: /gallery/images/thumb/sphx_glr___init___thumb.png
+
+        :ref:`sphx_glr_gallery___init__.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /gallery/__init__
 .. raw:: html
 
     <div style='clear:both'></div>
@@ -19,6 +39,26 @@ Lines and polygons
 
 
 
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="">
+
+.. only:: html
+
+    .. figure:: /gallery/lines_and_polygons/images/thumb/sphx_glr___init___thumb.png
+
+        :ref:`sphx_glr_gallery_lines_and_polygons___init__.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /gallery/lines_and_polygons/__init__
 
 .. raw:: html
 
@@ -169,6 +209,26 @@ Miscellanea
 
 
 
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="">
+
+.. only:: html
+
+    .. figure:: /gallery/miscellanea/images/thumb/sphx_glr___init___thumb.png
+
+        :ref:`sphx_glr_gallery_miscellanea___init__.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /gallery/miscellanea/__init__
 
 .. raw:: html
 
@@ -366,6 +426,26 @@ Scalar data
 
 .. only:: html
 
+    .. figure:: /gallery/scalar_data/images/thumb/sphx_glr___init___thumb.png
+
+        :ref:`sphx_glr_gallery_scalar_data___init__.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /gallery/scalar_data/__init__
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="">
+
+.. only:: html
+
     .. figure:: /gallery/scalar_data/images/thumb/sphx_glr_waves_thumb.png
 
         :ref:`sphx_glr_gallery_scalar_data_waves.py`
@@ -449,6 +529,26 @@ Vector data
 
 
 
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="">
+
+.. only:: html
+
+    .. figure:: /gallery/vector_data/images/thumb/sphx_glr___init___thumb.png
+
+        :ref:`sphx_glr_gallery_vector_data___init__.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /gallery/vector_data/__init__
 
 .. raw:: html
 
@@ -539,6 +639,26 @@ Web services
 
 
 
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="">
+
+.. only:: html
+
+    .. figure:: /gallery/web_services/images/thumb/sphx_glr___init___thumb.png
+
+        :ref:`sphx_glr_gallery_web_services___init__.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /gallery/web_services/__init__
 
 .. raw:: html
 
