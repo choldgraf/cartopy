@@ -5,17 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cartopy.crs &#8212; cartopy 0.15.1 documentation</title>
-    
+    <title>cartopy.crs &#8212; cartopy 0.15.0 documentation</title>
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.15.1',
+        VERSION:     '0.15.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -83,7 +80,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
           <div class="body" role="main">
             
   <h1>Source code for cartopy.crs</h1><div class="highlight"><pre>
-<span></span><span class="c1"># (C) British Crown Copyright 2011 - 2016, Met Office</span>
+<span></span><span class="c1"># (C) British Crown Copyright 2011 - 2017, Met Office</span>
 <span class="c1">#</span>
 <span class="c1"># This file is part of cartopy.</span>
 <span class="c1">#</span>
@@ -699,7 +696,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <span class="k">return</span> <span class="n">return_value</span></div></div>
 
 
-<span class="k">class</span> <span class="nc">_RectangularProjection</span><span class="p">(</span><span class="n">Projection</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">_RectangularProjection</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">,</span> <span class="n">Projection</span><span class="p">)):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The abstract superclass of projections with a rectangular domain which</span>
 <span class="sd">    is symmetric about the origin.</span>
@@ -725,7 +722,8 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_half_height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_half_height</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">_CylindricalProjection</span><span class="p">(</span><span class="n">_RectangularProjection</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">_CylindricalProjection</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">,</span>
+                                                <span class="n">_RectangularProjection</span><span class="p">)):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The abstract class which denotes cylindrical projections where we</span>
 <span class="sd">    want to allow x values to wrap around.</span>
@@ -1356,8 +1354,10 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
 
 <div class="viewcode-block" id="Gnomonic"><a class="viewcode-back" href="../../crs/projections.html#cartopy.crs.Gnomonic">[docs]</a><span class="k">class</span> <span class="nc">Gnomonic</span><span class="p">(</span><span class="n">Projection</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">globe</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="n">proj4_params</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;proj&#39;</span><span class="p">,</span> <span class="s1">&#39;gnom&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;lat_0&#39;</span><span class="p">,</span> <span class="n">central_latitude</span><span class="p">)]</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                 <span class="n">central_longitude</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">globe</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">proj4_params</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;proj&#39;</span><span class="p">,</span> <span class="s1">&#39;gnom&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;lat_0&#39;</span><span class="p">,</span> <span class="n">central_latitude</span><span class="p">),</span>
+                        <span class="p">(</span><span class="s1">&#39;lon_0&#39;</span><span class="p">,</span> <span class="n">central_longitude</span><span class="p">)]</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">Gnomonic</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">proj4_params</span><span class="p">,</span> <span class="n">globe</span><span class="o">=</span><span class="n">globe</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_max</span> <span class="o">=</span> <span class="mf">5e7</span>
 
@@ -1482,7 +1482,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ylim</span></div>
 
 
-<span class="k">class</span> <span class="nc">_WarpedRectangularProjection</span><span class="p">(</span><span class="n">Projection</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">_WarpedRectangularProjection</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">with_metaclass</span><span class="p">(</span><span class="n">ABCMeta</span><span class="p">,</span> <span class="n">Projection</span><span class="p">)):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proj4_params</span><span class="p">,</span> <span class="n">central_longitude</span><span class="p">,</span> <span class="n">globe</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">_WarpedRectangularProjection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">proj4_params</span><span class="p">,</span>
                                                            <span class="n">globe</span><span class="o">=</span><span class="n">globe</span><span class="p">)</span>
@@ -1540,7 +1540,6 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <span class="c1"># Warn when using Robinson with proj4 4.8 due to discontinuity at</span>
         <span class="c1"># 40 deg N introduced by incomplete fix to issue #113 (see</span>
         <span class="c1"># https://trac.osgeo.org/proj/ticket/113).</span>
-        <span class="kn">import</span> <span class="nn">re</span>
         <span class="k">if</span> <span class="n">PROJ4_VERSION</span> <span class="o">!=</span> <span class="p">():</span>
             <span class="k">if</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">PROJ4_VERSION</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The Robinson projection in the v4.8.x series &#39;</span>
@@ -1691,19 +1690,22 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="k">class</span> <span class="nc">_Satellite</span><span class="p">(</span><span class="n">Projection</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">projection</span><span class="p">,</span> <span class="n">satellite_height</span><span class="o">=</span><span class="mi">35785831</span><span class="p">,</span>
                  <span class="n">central_longitude</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-                 <span class="n">false_easting</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">false_northing</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">globe</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+                 <span class="n">false_easting</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">false_northing</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">globe</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">sweep_axis</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">proj4_params</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;proj&#39;</span><span class="p">,</span> <span class="n">projection</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;lon_0&#39;</span><span class="p">,</span> <span class="n">central_longitude</span><span class="p">),</span>
                         <span class="p">(</span><span class="s1">&#39;lat_0&#39;</span><span class="p">,</span> <span class="n">central_latitude</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">satellite_height</span><span class="p">),</span>
                         <span class="p">(</span><span class="s1">&#39;x_0&#39;</span><span class="p">,</span> <span class="n">false_easting</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;y_0&#39;</span><span class="p">,</span> <span class="n">false_northing</span><span class="p">),</span>
                         <span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">sweep_axis</span><span class="p">:</span>
+            <span class="n">proj4_params</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">&#39;sweep&#39;</span><span class="p">,</span> <span class="n">sweep_axis</span><span class="p">))</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">_Satellite</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">proj4_params</span><span class="p">,</span> <span class="n">globe</span><span class="o">=</span><span class="n">globe</span><span class="p">)</span>
 
         <span class="c1"># TODO: Let the globe return the semimajor axis always.</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">globe</span><span class="o">.</span><span class="n">semimajor_axis</span> <span class="ow">or</span> <span class="n">WGS84_SEMIMAJOR_AXIS</span><span class="p">)</span>
         <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">globe</span><span class="o">.</span><span class="n">semiminor_axis</span> <span class="ow">or</span> <span class="n">a</span><span class="p">)</span>
         <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">satellite_height</span><span class="p">)</span>
-        <span class="n">max_x</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">atan</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span>
-        <span class="n">max_y</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">atan</span><span class="p">(</span><span class="n">b</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span>
+        <span class="n">max_x</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span>
+        <span class="n">max_y</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">b</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span>
 
         <span class="n">coords</span> <span class="o">=</span> <span class="n">_ellipse_boundary</span><span class="p">(</span><span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span>
                                    <span class="n">false_easting</span><span class="p">,</span> <span class="n">false_northing</span><span class="p">,</span> <span class="mi">61</span><span class="p">)</span>
@@ -1735,7 +1737,8 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">central_longitude</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">satellite_height</span><span class="o">=</span><span class="mi">35785831</span><span class="p">,</span>
-                 <span class="n">false_easting</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">false_northing</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">globe</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+                 <span class="n">false_easting</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">false_northing</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">globe</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">sweep_axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">Geostationary</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;geos&#39;</span><span class="p">,</span>
             <span class="n">satellite_height</span><span class="o">=</span><span class="n">satellite_height</span><span class="p">,</span>
@@ -1743,7 +1746,8 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
             <span class="n">central_latitude</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
             <span class="n">false_easting</span><span class="o">=</span><span class="n">false_easting</span><span class="p">,</span>
             <span class="n">false_northing</span><span class="o">=</span><span class="n">false_northing</span><span class="p">,</span>
-            <span class="n">globe</span><span class="o">=</span><span class="n">globe</span><span class="p">)</span></div>
+            <span class="n">globe</span><span class="o">=</span><span class="n">globe</span><span class="p">,</span>
+            <span class="n">sweep_axis</span><span class="o">=</span><span class="n">sweep_axis</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="NearsidePerspective"><a class="viewcode-back" href="../../crs/projections.html#cartopy.crs.NearsidePerspective">[docs]</a><span class="k">class</span> <span class="nc">NearsidePerspective</span><span class="p">(</span><span class="n">_Satellite</span><span class="p">):</span>

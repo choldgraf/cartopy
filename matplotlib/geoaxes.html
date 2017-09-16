@@ -5,17 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Cartopy matplotlib integration reference document &#8212; cartopy 0.15.1 documentation</title>
-    
+    <title>Cartopy matplotlib integration reference document &#8212; cartopy 0.15.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.15.1',
+        VERSION:     '0.15.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -283,8 +280,21 @@ more details.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="cartopy.mpl.geoaxes.GeoAxes.autoscale_view">
+<code class="descname">autoscale_view</code><span class="sig-paren">(</span><em>tight=None</em>, <em>scalex=True</em>, <em>scaley=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.autoscale_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.autoscale_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Autoscale the view limits using the data limits. You can
+selectively autoscale only a single axis, e.g., the xaxis by
+setting <em>scaley</em> to <em>False</em>.  The autoscaling preserves any
+axis direction reversal that has already been done.</p>
+<p>The data limits are not updated automatically when artist data are
+changed after the artist has been added to an Axes instance.  In that
+case, use <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.relim.html#matplotlib.axes.Axes.relim" title="(in Matplotlib v2.0.2)"><code class="xref py py-meth docutils literal"><span class="pre">matplotlib.axes.Axes.relim()</span></code></a> prior to calling
+autoscale_view.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="cartopy.mpl.geoaxes.GeoAxes.background_img">
-<code class="descname">background_img</code><span class="sig-paren">(</span><em>name=’ne_shaded’</em>, <em>resolution=’low’</em>, <em>extent=None</em>, <em>cache=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.background_img"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.background_img" title="Permalink to this definition">¶</a></dt>
+<code class="descname">background_img</code><span class="sig-paren">(</span><em>name='ne_shaded'</em>, <em>resolution='low'</em>, <em>extent=None</em>, <em>cache=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.background_img"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.background_img" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a background image to the map, from a selection of pre-prepared
 images held in a directory specified by the CARTOPY_USER_BACKGROUNDS
 environment variable. That directory is checked with
@@ -383,7 +393,7 @@ grid northward.</p>
 
 <dl class="method">
 <dt id="cartopy.mpl.geoaxes.GeoAxes.coastlines">
-<code class="descname">coastlines</code><span class="sig-paren">(</span><em>resolution=‘110m’</em>, <em>color=’black’</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.coastlines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.coastlines" title="Permalink to this definition">¶</a></dt>
+<code class="descname">coastlines</code><span class="sig-paren">(</span><em>resolution='110m'</em>, <em>color='black'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.coastlines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.coastlines" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds coastal <strong>outlines</strong> to the current axes from the Natural Earth
 “coastline” shapefile collection.</p>
 <p>Kwargs:</p>
@@ -475,7 +485,7 @@ manager exits.</dd>
 
 <dl class="method">
 <dt id="cartopy.mpl.geoaxes.GeoAxes.natural_earth_shp">
-<code class="descname">natural_earth_shp</code><span class="sig-paren">(</span><em>name=’land’</em>, <em>resolution=‘110m’</em>, <em>category=’physical’</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.natural_earth_shp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.natural_earth_shp" title="Permalink to this definition">¶</a></dt>
+<code class="descname">natural_earth_shp</code><span class="sig-paren">(</span><em>name='land'</em>, <em>resolution='110m'</em>, <em>category='physical'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.natural_earth_shp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.natural_earth_shp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds the geometries from the specified Natural Earth shapefile to the
 Axes as a <a class="reference external" href="https://matplotlib.org/api/collections_api.html#matplotlib.collections.PathCollection" title="(in Matplotlib v2.0.2)"><code class="xref py py-class docutils literal"><span class="pre">PathCollection</span></code></a>.</p>
 <p><code class="docutils literal"><span class="pre">**kwargs</span></code> are passed through to the
@@ -675,7 +685,7 @@ to support other map projections.</p>
 
 <dl class="method">
 <dt id="cartopy.mpl.geoaxes.GeoAxes.stock_img">
-<code class="descname">stock_img</code><span class="sig-paren">(</span><em>name=’ne_shaded’</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.stock_img"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.stock_img" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stock_img</code><span class="sig-paren">(</span><em>name='ne_shaded'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.stock_img"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.stock_img" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a standard image to the map.</p>
 <p>Currently, the only (and default) option is a downsampled version of
 the Natural Earth shaded relief raster.</p>
@@ -704,7 +714,7 @@ grid northward.</p>
 
 <dl class="method">
 <dt id="cartopy.mpl.geoaxes.GeoAxes.tissot">
-<code class="descname">tissot</code><span class="sig-paren">(</span><em>rad_km=500000.0</em>, <em>lons=None</em>, <em>lats=None</em>, <em>n_samples=80</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.tissot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.tissot" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tissot</code><span class="sig-paren">(</span><em>rad_km=500</em>, <em>lons=None</em>, <em>lats=None</em>, <em>n_samples=80</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cartopy/mpl/geoaxes.html#GeoAxes.tissot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.mpl.geoaxes.GeoAxes.tissot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds Tissot’s indicatrices to the axes.</p>
 <p>Kwargs:</p>
 <blockquote>

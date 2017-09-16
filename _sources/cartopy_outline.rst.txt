@@ -37,7 +37,7 @@ cartopy.feature
 
 	:py:obj:`Feature`, :py:obj:`GSHHSFeature`, :py:obj:`NaturalEarthFeature`, :py:obj:`ShapelyFeature`
 	:py:obj:`WFSFeature`, :py:obj:`BORDERS`, :py:obj:`COASTLINE`, :py:obj:`LAKES`
-	:py:obj:`LAND`, :py:obj:`OCEAN`, :py:obj:`RIVERS`
+	:py:obj:`LAND`, :py:obj:`OCEAN`, :py:obj:`RIVERS`, :py:obj:`STATES`
 
 cartopy.img_transform
 *********************
@@ -49,12 +49,15 @@ cartopy.img_transform
 
 	:py:obj:`mesh_projection`, :py:obj:`regrid`, :py:obj:`warp_array`, :py:obj:`warp_img`
 
-cartopy.trace.cpython-35m-darwin
-********************************
+cartopy.trace
+*************
 
-.. currentmodule:: cartopy.trace.cpython-35m-darwin
+.. currentmodule:: cartopy.trace
+
+.. csv-table::
 
 
+	:py:obj:`project_linear`
 
 cartopy.util
 ************

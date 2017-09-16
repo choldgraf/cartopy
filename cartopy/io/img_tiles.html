@@ -5,17 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Image tile identification and fetching &#8212; cartopy 0.15.1 documentation</title>
-    
+    <title>Image tile identification and fetching &#8212; cartopy 0.15.0 documentation</title>
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.15.1',
+        VERSION:     '0.15.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -112,7 +109,7 @@ at zoom level 2, do <code class="docutils literal"><span class="pre">ax.add_imag
 using tiles in this way can be found at <a class="reference internal" href="../../gallery/scalar_data/eyja_volcano.html#examples-eyja-volcano"><span class="std std-ref">Grabbing the map tiles</span></a>.</p>
 <dl class="class">
 <dt id="cartopy.io.img_tiles.GoogleTiles">
-<em class="property">class </em><code class="descclassname">cartopy.io.img_tiles.</code><code class="descname">GoogleTiles</code><span class="sig-paren">(</span><em>desired_tile_form=’RGB’</em>, <em>style=’street’</em>, <em>url=’https://mts0.google.com/vt/lyrs={style}&#64;177000000&amp;hl=en&amp;src=api&amp;x={x}&amp;y={y}&amp;z={z}&amp;s=G’</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cartopy/io/img_tiles.html#GoogleTiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.io.img_tiles.GoogleTiles" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">cartopy.io.img_tiles.</code><code class="descname">GoogleTiles</code><span class="sig-paren">(</span><em>desired_tile_form='RGB'</em>, <em>style='street'</em>, <em>url='https://mts0.google.com/vt/lyrs={style}&#64;177000000&amp;hl=en&amp;src=api&amp;x={x}&amp;y={y}&amp;z={z}&amp;s=G'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cartopy/io/img_tiles.html#GoogleTiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.io.img_tiles.GoogleTiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements web tile retrieval using the Google WTS coordinate system.</p>
 <p>A “tile” in this class refers to the coordinates (x, y, z).</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -186,7 +183,7 @@ tiles will be retrieved through this process.</dd>
 
 <dl class="class">
 <dt id="cartopy.io.img_tiles.QuadtreeTiles">
-<em class="property">class </em><code class="descclassname">cartopy.io.img_tiles.</code><code class="descname">QuadtreeTiles</code><span class="sig-paren">(</span><em>desired_tile_form=’RGB’</em>, <em>style=’street’</em>, <em>url=’https://mts0.google.com/vt/lyrs={style}&#64;177000000&amp;hl=en&amp;src=api&amp;x={x}&amp;y={y}&amp;z={z}&amp;s=G’</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cartopy/io/img_tiles.html#QuadtreeTiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.io.img_tiles.QuadtreeTiles" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">cartopy.io.img_tiles.</code><code class="descname">QuadtreeTiles</code><span class="sig-paren">(</span><em>desired_tile_form='RGB'</em>, <em>style='street'</em>, <em>url='https://mts0.google.com/vt/lyrs={style}&#64;177000000&amp;hl=en&amp;src=api&amp;x={x}&amp;y={y}&amp;z={z}&amp;s=G'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cartopy/io/img_tiles.html#QuadtreeTiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.io.img_tiles.QuadtreeTiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements web tile retrieval using the Microsoft WTS quadkey coordinate
 system.</p>
 <p>A “tile” in this class refers to a quadkey such as “1”, “14” or “141”
@@ -223,7 +220,7 @@ target domain.</p>
 
 <dl class="class">
 <dt id="cartopy.io.img_tiles.StamenTerrain">
-<em class="property">class </em><code class="descclassname">cartopy.io.img_tiles.</code><code class="descname">StamenTerrain</code><span class="sig-paren">(</span><em>desired_tile_form=’RGB’</em>, <em>style=’street’</em>, <em>url=’https://mts0.google.com/vt/lyrs={style}&#64;177000000&amp;hl=en&amp;src=api&amp;x={x}&amp;y={y}&amp;z={z}&amp;s=G’</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cartopy/io/img_tiles.html#StamenTerrain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.io.img_tiles.StamenTerrain" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">cartopy.io.img_tiles.</code><code class="descname">StamenTerrain</code><span class="sig-paren">(</span><em>desired_tile_form='RGB'</em>, <em>style='street'</em>, <em>url='https://mts0.google.com/vt/lyrs={style}&#64;177000000&amp;hl=en&amp;src=api&amp;x={x}&amp;y={y}&amp;z={z}&amp;s=G'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/cartopy/io/img_tiles.html#StamenTerrain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.io.img_tiles.StamenTerrain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Terrain tiles defined for the continental United States, and include land
 color and shaded hills. The land colors are a custom palette developed by
 Gem Spear for the National Atlas 1km land cover data set, which defines

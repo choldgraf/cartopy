@@ -5,17 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Cartopy developer interfaces &#8212; cartopy 0.15.1 documentation</title>
-    
+    <title>Cartopy developer interfaces &#8212; cartopy 0.15.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.15.1',
+        VERSION:     '0.15.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -126,7 +123,7 @@ extend, whilst still making it possible for users to configure in their own
 way.</p>
 <dl class="class">
 <dt id="cartopy.io.Downloader">
-<em class="property">class </em><code class="descclassname">cartopy.io.</code><code class="descname">Downloader</code><span class="sig-paren">(</span><em>url_template</em>, <em>target_path_template</em>, <em>pre_downloaded_path_template=”</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cartopy/io.html#Downloader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.io.Downloader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">cartopy.io.</code><code class="descname">Downloader</code><span class="sig-paren">(</span><em>url_template</em>, <em>target_path_template</em>, <em>pre_downloaded_path_template=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cartopy/io.html#Downloader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cartopy.io.Downloader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a resource, that can be configured easily, which knows
 how to acquire itself (perhaps via HTTP).</p>
 <p>The key interface method is <code class="xref py py-meth docutils literal"><span class="pre">path()</span></code> - typically <em>all</em> external calls
@@ -162,7 +159,7 @@ location (unlike the
 </div></blockquote>
 <dl class="attribute">
 <dt id="cartopy.io.Downloader.FORMAT_KEYS">
-<code class="descname">FORMAT_KEYS</code><em class="property"> = (‘config’,)</em><a class="headerlink" href="#cartopy.io.Downloader.FORMAT_KEYS" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FORMAT_KEYS</code><em class="property"> = ('config',)</em><a class="headerlink" href="#cartopy.io.Downloader.FORMAT_KEYS" title="Permalink to this definition">¶</a></dt>
 <dd><p>The minimum keys which should be provided in the <code class="docutils literal"><span class="pre">format_dict</span></code>
 argument for the <code class="docutils literal"><span class="pre">path</span></code>, <code class="docutils literal"><span class="pre">url</span></code>, <code class="docutils literal"><span class="pre">target_path</span></code>,
 <code class="docutils literal"><span class="pre">pre_downloaded_path</span></code> and <code class="docutils literal"><span class="pre">acquire_resource</span></code> methods.</p>

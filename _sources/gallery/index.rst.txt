@@ -232,7 +232,7 @@ Miscellanea
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Visualize Tissot's indicatrix on a map. ">
+    <div class="sphx-glr-thumbcontainer" tooltip="Visualize Tissot&#x27;s indicatrix on a map. ">
 
 .. only:: html
 
@@ -462,7 +462,7 @@ Scalar data
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates Cartopy's ability to project images into the desired projection on-th...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates Cartopy&#x27;s ability to project images into the desired projection on-th...">
 
 .. only:: html
 
@@ -482,7 +482,7 @@ Scalar data
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Demonstrates cartopy's ability to draw map tiles which are downloaded on demand from the Stamen...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Demonstrates cartopy&#x27;s ability to draw map tiles which are downloaded on demand from the Stamen...">
 
 .. only:: html
 
@@ -770,13 +770,13 @@ Web services
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Python source code: gallery_python.zip <//Users/choldgraf/Dropbox/github/forks/python/geo/cartopy/docs/source/gallery/gallery_python.zip>`
+    :download:`Download all examples in Python source code: gallery_python.zip <//mnt/c/Users/chold/Dropbox/github/forks/python/geo/cartopy/docs/source/gallery/gallery_python.zip>`
 
 
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Jupyter notebooks: gallery_jupyter.zip <//Users/choldgraf/Dropbox/github/forks/python/geo/cartopy/docs/source/gallery/gallery_jupyter.zip>`
+    :download:`Download all examples in Jupyter notebooks: gallery_jupyter.zip <//mnt/c/Users/chold/Dropbox/github/forks/python/geo/cartopy/docs/source/gallery/gallery_jupyter.zip>`
 
 .. rst-class:: sphx-glr-signature
 

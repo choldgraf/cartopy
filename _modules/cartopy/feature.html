@@ -5,17 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cartopy.feature &#8212; cartopy 0.15.1 documentation</title>
-    
+    <title>cartopy.feature &#8212; cartopy 0.15.0 documentation</title>
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.15.1',
+        VERSION:     '0.15.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -83,7 +80,7 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
           <div class="body" role="main">
             
   <h1>Source code for cartopy.feature</h1><div class="highlight"><pre>
-<span></span><span class="c1"># (C) British Crown Copyright 2011 - 2016, Met Office</span>
+<span></span><span class="c1"># (C) British Crown Copyright 2011 - 2017, Met Office</span>
 <span class="c1">#</span>
 <span class="c1"># This file is part of cartopy.</span>
 <span class="c1">#</span>
@@ -108,7 +105,6 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">abc</span> <span class="k">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
-<span class="kn">import</span> <span class="nn">os.path</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">shapely.geometry</span> <span class="k">as</span> <span class="nn">sgeom</span>
@@ -271,7 +267,22 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">geometries</span> <span class="o">=</span> <span class="n">_NATURAL_EARTH_GEOM_CACHE</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
-        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">geometries</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">geometries</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">with_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_scale</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a copy of the feature with a new scale.</span>
+
+<span class="sd">        Args:</span>
+
+<span class="sd">        * new_scale:</span>
+<span class="sd">            The new dataset scale, i.e. one of &#39;10m&#39;, &#39;50m&#39;, or &#39;110m&#39;.</span>
+<span class="sd">            Corresponding to 1:10,000,000, 1:50,000,000, and 1:110,000,000</span>
+<span class="sd">            respectively.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">new_scale</span><span class="p">,</span>
+                                   <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="GSHHSFeature"><a class="viewcode-back" href="../../matplotlib/feature_interface.html#cartopy.feature.GSHHSFeature">[docs]</a><span class="k">class</span> <span class="nc">GSHHSFeature</span><span class="p">(</span><span class="n">Feature</span><span class="p">):</span>
@@ -431,6 +442,9 @@ border="0" alt="Cartopy" style="margin-left: -60px;"/>
                               <span class="s1">&#39;110m&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
 <span class="sd">&quot;&quot;&quot;Small scale (1:110m) country boundaries.&quot;&quot;&quot;</span>
 
+<span class="n">STATES</span> <span class="o">=</span> <span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="s1">&#39;cultural&#39;</span><span class="p">,</span> <span class="s1">&#39;admin_1_states_provinces_lakes&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;110m&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;Small scale (1:110m) state and province boundaries.&quot;&quot;&quot;</span>
 
 <span class="n">COASTLINE</span> <span class="o">=</span> <span class="n">NaturalEarthFeature</span><span class="p">(</span><span class="s1">&#39;physical&#39;</span><span class="p">,</span> <span class="s1">&#39;coastline&#39;</span><span class="p">,</span> <span class="s1">&#39;110m&#39;</span><span class="p">,</span>
                                 <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
